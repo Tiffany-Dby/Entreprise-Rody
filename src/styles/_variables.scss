@@ -1,0 +1,52 @@
+:root {
+  // COLORS
+  --primary: #0985CE;
+  --secondary: #ADE7FF;
+  --tertiary: #86A9C5;
+  --white: #fefefe;
+  --black: #111111;
+
+  // GRADIENTS
+
+  // PADDING
+  --padding-xxs: .4rem;
+  --padding-xs: .8rem;
+  --padding-s: 1.6rem;
+  --padding-m: 2.4rem;
+  --padding-l: 3.2rem;
+  --padding-xl: 4.8rem;
+  --padding-xxl: 6.4rem;
+
+  // RADIUS
+  --radius-xxs: .1rem;
+  --radius-xs: .2rem;
+  --radius-s: .4rem;
+  --radius-m: .55rem;
+  --radius-l: .7rem;
+
+  // SHADOW
+
+
+  // FONT SIZE
+  --font-label: 1.3rem;
+  --font-size-xs: calc(.95rem + .6vmin);
+  --font-size-s: calc(1rem + .6vmin);
+  --font-size-n: calc(1.2rem + .6vmin);
+  --font-size-m: calc(1.6rem + .6vmin);
+  --font-size-l: calc(1.8rem + .6vmin);
+  --font-size-xl: calc(2rem + .6vmin);
+  --font-size-xxl: calc(3rem + .6vmin);
+  --font-size-3xl: calc(4rem + .6vmin);
+  --font-size-4xl: calc(5rem + .6vmin);
+
+  // FONT WEIGHT
+  --fw-thin: 100;
+  --fw-extra-light: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+  --fw-extra-bold: 800;
+  --fw-black: 900;
+}

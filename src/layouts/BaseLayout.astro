@@ -1,0 +1,29 @@
+---
+import "../styles/index.scss";
+
+const { headTitle } = Astro.props;
+---
+
+<html lang="fr-FR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Entrepise Rody de Bâtiment - Cuisiniste d'expérience"
+    />
+    <meta
+      name="keywords"
+      content="cuisine, cuisiniste, pose de cuisine, artisan"
+    />
+    <meta name="author" content="Tiffany Dbeissy" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{headTitle}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

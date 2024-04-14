@@ -1,0 +1,23 @@
+@mixin container($width: "1300px", $padding: var(--padding-s)) {
+  width: 100%;
+  margin: 0 auto;
+  max-width: #{$width};
+  padding: #{$padding};
+}
+
+@mixin flex($direction: "row", $wrap: "wrap") {
+  display: flex;
+  flex-wrap: #{$wrap};
+  flex-direction: #{$direction};
+}
+
+@mixin center {
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin grow($size: 1) {
+  flex-shrink: 0;
+  flex-basis: 0%;
+  flex-grow: #{$size};
+}

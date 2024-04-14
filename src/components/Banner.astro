@@ -1,0 +1,30 @@
+---
+
+---
+
+<style lang="scss">
+  @use "../styles/mixins" as *;
+
+  .banner {
+    h1 {
+      font-size: var(--font-size-3xl);
+    }
+
+    &__container {
+      @include flex("column", "nowrap");
+      text-align: center;
+
+      p {
+        font-weight: var(--fw-bold);
+        font-size: var(--font-size-l);
+      }
+    }
+  }
+</style>
+
+<section class="banner" role="banner">
+  <div class="banner__container">
+    <h1>Entreprise Rody de Bâtiment</h1>
+    <p>Transformez votre cuisine en un espace de rêve</p>
+  </div>
+</section>
