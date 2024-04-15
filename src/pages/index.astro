@@ -1,8 +1,18 @@
 ---
-import Banner from "../components/Banner.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Banner from "@components/Banner.astro";
+import ExperienceKeys from "@components/ExperienceKeys.astro";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
+<style lang="scss">
+	@use "../styles/mixins" as *;
+</style>
+
 <BaseLayout>
+	<Header />
 	<Banner />
+	<ExperienceKeys />
+	<Footer />
 </BaseLayout>

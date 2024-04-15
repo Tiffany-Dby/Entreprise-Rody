@@ -6,6 +6,14 @@
   @use "../styles/mixins" as *;
 
   .banner {
+    @include flex;
+    @include center;
+    background:
+      var(--linear-gradient-primary-transparent-45deg),
+      url("../assets/images/banner.jpg") no-repeat center/cover;
+    min-height: 100svh;
+    color: var(--white);
+
     h1 {
       font-size: var(--font-size-3xl);
     }

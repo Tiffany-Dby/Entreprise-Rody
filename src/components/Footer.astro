@@ -1,3 +1,56 @@
 ---
 
 ---
+
+<style lang="scss">
+  @use "../styles/mixins" as *;
+
+  footer {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-template-areas:
+      "logo links"
+      "copy copy";
+    row-gap: 5rem;
+    padding: var(--padding-s);
+    background-color: var(--dark-grey);
+
+    div {
+      grid-area: logo;
+    }
+    ul {
+      grid-area: links;
+      @include flex;
+      justify-content: space-evenly;
+    }
+    p {
+      grid-area: copy;
+      justify-self: center;
+    }
+
+    a,
+    p {
+      color: var(--white);
+    }
+  }
+</style>
+
+<footer>
+  <div class="logo">
+    <p>LOGO</p>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#">Mentions légales</a></li>
+      <li><a href="#">Un lien</a></li>
+      <li><a href="#">Un lien</a></li>
+    </ul>
+  </nav>
+  <p>
+    &#169; Entreprise Rody de Bâtiment 2024 -<a
+      href="https://github.com/Tiffany-Dby"
+    >
+      Website made by Tiffany Dbeissy</a
+    >
+  </p>
+</footer>

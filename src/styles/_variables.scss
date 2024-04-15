@@ -1,3 +1,29 @@
+// FONTS
+// Raleway
+@font-face {
+  font-family: "Raleway";
+  src: url(../assets/fonts/Raleway/Raleway-VariableFont_wght.ttf) format('truetype-variations');
+  font-display: swap;
+  font-weight: 100 900;
+}
+
+// Roboto
+@font-face {
+  font-family: "Roboto";
+  src: url(../assets/fonts/Roboto/Roboto-Regular.ttf) format('truetype');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../assets/fonts/Roboto/Roboto-Bold.ttf) format('truetype');
+  font-display: swap;
+  font-weight: bold;
+  font-style: normal;
+}
+
 :root {
   // COLORS
   --primary: #0985CE;
@@ -5,8 +31,12 @@
   --tertiary: #86A9C5;
   --white: #fefefe;
   --black: #111111;
+  --dark-grey: #303131;
 
   // GRADIENTS
+  --linear-gradient-primary-transparent-45deg: linear-gradient(45deg,
+      rgba(68, 123, 206, 1) 0%,
+      rgba(9, 133, 206, 0) 100%);
 
   // PADDING
   --padding-xxs: .4rem;

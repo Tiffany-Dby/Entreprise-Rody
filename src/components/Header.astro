@@ -1,3 +1,34 @@
 ---
-
+import HeaderNavigation from "@components/HeaderNavigation.astro";
 ---
+
+<style lang="scss">
+  @use "../styles/mixins" as *;
+
+  .header {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    padding: var(--padding-m) var(--padding-s);
+    font-weight: var(--fw-semi-bold);
+    transition: all 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+
+    &__container {
+      @include flex;
+      justify-content: space-between;
+      text-transform: uppercase;
+    }
+  }
+</style>
+
+<header class="header">
+  <div class="header__container">
+    <div class="logo">
+      <p>LOGO</p>
+    </div>
+    <HeaderNavigation />
+  </div>
+</header>

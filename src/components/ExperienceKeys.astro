@@ -1,0 +1,54 @@
+---
+import KeyCard from "./KeyCard.astro";
+
+const getYearsOfExperience = (startingYear) =>
+  new Date().getFullYear() - startingYear;
+---
+
+<style lang="scss">
+  @use "../styles/mixins" as *;
+
+  section {
+    @include container($padding: var(--padding-m));
+    text-align: center;
+
+    div {
+      @include flex;
+      justify-content: space-evenly;
+      row-gap: 2rem;
+      column-gap: 0.5rem;
+      margin: 0 auto;
+      padding-top: var(--padding-m);
+    }
+
+    span {
+      font-weight: var(--fw-bold);
+      color: var(--primary);
+    }
+  }
+</style>
+
+<section>
+  <h2>Mon entreprise c'est ...</h2>
+
+  <div>
+    <KeyCard title="Un savoir faire">
+      <p>
+        Avec <span>{getYearsOfExperience(1990)} ans</span> d'expérience, nous façonnons
+        vos espaces avec passion et précision.
+      </p>
+    </KeyCard>
+    <KeyCard title="Une tranquilité">
+      <p>
+        Une garantie de <span>10 ans</span> sur chaque installation, reflétant notre
+        engagement d'un travail de qualité.
+      </p>
+    </KeyCard>
+    <KeyCard title="Lorem Ipsum">
+      <p>
+        Lorem ipsum dolor sit amet <span>consectetur</span> adipisicing elit. Accusamus,
+        eveniet adipisicing!
+      </p>
+    </KeyCard>
+  </div>
+</section>

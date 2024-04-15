@@ -1,0 +1,35 @@
+---
+
+---
+
+<style lang="scss">
+  @use "../styles/mixins" as *;
+
+  nav {
+    width: 70%;
+    max-width: 400px;
+
+    ul {
+      @include flex;
+      justify-content: space-between;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--white);
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--dark-grey);
+      }
+    }
+  }
+</style>
+
+<nav>
+  <ul>
+    <li><a href="">Accueil</a></li>
+    <li><a href="">Galerie</a></li>
+    <li><a href="">Contact</a></li>
+  </ul>
+</nav>
