@@ -1,0 +1,30 @@
+---
+
+---
+
+<style lang="scss">
+  @use "../styles/mixins" as *;
+
+  .gallery-overview {
+    min-height: 200px;
+    background-color: var(--secondary-25);
+    &__container {
+      @include container($padding: var(--padding-m));
+    }
+    h2 {
+      text-align: center;
+    }
+  }
+</style>
+
+<section class="gallery-overview">
+  <div class="gallery-overview__container">
+    <h2>Une transformation</h2>
+    <p>
+      Plongez dans nos exemples de cuisines avant et après notre intervention
+      pour découvrir comment nous métamorphosons votre espace de vie. Êtes-vous
+      prêt à être inspiré et faire de votre cuisine un sanctuaire de style et de
+      fonctionnalités?
+    </p>
+  </div>
+</section>

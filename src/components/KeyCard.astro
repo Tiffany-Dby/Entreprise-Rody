@@ -11,13 +11,13 @@ const { title } = Astro.props;
     border-radius: var(--radius-m);
     text-align: center;
     padding: var(--padding-s);
-    max-width: 350px;
 
-    // div {
-    //   display: flex;
-    //   align-items: baseline;
-    //   gap: 0.25rem;
-    // }
+    @media screen and (min-width: 550px) {
+      max-width: calc(100% / 2 - var(--padding-s));
+    }
+    @media screen and (min-width: 1230px) {
+      max-width: calc(100% / 4 - var(--padding-s));
+    }
   }
 </style>
 

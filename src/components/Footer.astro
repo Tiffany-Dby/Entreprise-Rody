@@ -11,21 +11,24 @@
     grid-template-areas:
       "logo links"
       "copy copy";
-    row-gap: 5rem;
+    row-gap: 3rem;
     padding: var(--padding-s);
     background-color: var(--dark-grey);
 
     div {
       grid-area: logo;
     }
+
     ul {
       grid-area: links;
       @include flex;
       justify-content: space-evenly;
     }
+
     p {
       grid-area: copy;
       justify-self: center;
+      text-align: center;
     }
 
     a,
@@ -47,10 +50,10 @@
     </ul>
   </nav>
   <p>
-    &#169; Entreprise Rody de Bâtiment 2024 -<a
+    &#169; Entreprise Rody de Bâtiment 2024 - made by <a
       href="https://github.com/Tiffany-Dby"
     >
-      Website made by Tiffany Dbeissy</a
+      Tiffany Dbeissy</a
     >
   </p>
 </footer>

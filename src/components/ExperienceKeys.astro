@@ -1,24 +1,27 @@
 ---
 import KeyCard from "./KeyCard.astro";
 
-const getYearsOfExperience = (startingYear) =>
-  new Date().getFullYear() - startingYear;
+const getYearsSpent = (startingYear) => new Date().getFullYear() - startingYear;
 ---
 
 <style lang="scss">
   @use "../styles/mixins" as *;
 
   section {
-    @include container($padding: var(--padding-m));
+    @include container($padding: var(--padding-m) var(--padding-s));
     text-align: center;
 
     div {
       @include flex;
-      justify-content: space-evenly;
-      row-gap: 2rem;
-      column-gap: 0.5rem;
+      justify-content: center;
+      gap: 2rem;
       margin: 0 auto;
       padding-top: var(--padding-m);
+      max-width: 900px;
+
+      @media screen and (min-width: 1230px) {
+        max-width: none;
+      }
     }
 
     span {
@@ -34,20 +37,31 @@ const getYearsOfExperience = (startingYear) =>
   <div>
     <KeyCard title="Un savoir faire">
       <p>
-        Avec <span>{getYearsOfExperience(1990)} ans</span> d'expérience, nous façonnons
-        vos espaces avec passion et précision.
+        Fort de <span>{getYearsSpent(1994)} ans</span> d'expérience, et d'une entreprise
+        de {getYearsSpent(2000)} ans d'existence, je façonne votre pièce à vivre
+        avec <span>passion</span> et <span>précision</span>.
       </p>
     </KeyCard>
     <KeyCard title="Une tranquilité">
       <p>
-        Une garantie de <span>10 ans</span> sur chaque installation, reflétant notre
-        engagement d'un travail de qualité.
+        Une garantie de <span>10 ans</span> sur chaque installation, c'est l'engagement
+        d'<span>un travail de qualité</span> pour que vous puissiez profiter en toute
+        sérénité.
       </p>
     </KeyCard>
-    <KeyCard title="Lorem Ipsum">
+    <KeyCard title="Un suivi">
       <p>
-        Lorem ipsum dolor sit amet <span>consectetur</span> adipisicing elit. Accusamus,
-        eveniet adipisicing!
+        Mon engagement se poursuit <span>même après la garantie</span>. Je reste
+        disponible pour toute <span>maintenance</span> afin d'assurer la longévité
+        de votre cuisine.
+      </p>
+    </KeyCard>
+    <KeyCard title="Une oreille attentive">
+      <p>
+        À l'écoute de vos besoins et envies, afin de vous
+        <span>conseiller</span> les
+        <span>meilleurs modèles</span> et <span>cuisinistes de confiance</span> pour
+        concrétiser votre projet.
       </p>
     </KeyCard>
   </div>
