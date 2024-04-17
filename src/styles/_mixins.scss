@@ -21,3 +21,19 @@
   flex-basis: 0%;
   flex-grow: #{$size};
 }
+
+@mixin button() {
+  text-decoration: none;
+  padding: var(--padding-xs) var(--padding-s);
+  border-radius: var(--radius-l);
+  background-color: var(--primary);
+  background-image: var(--linear-gradient-primary-transparent-45deg);
+  color: var(--white);
+  font-weight: var(--fw-medium);
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-color: var(--primary-125);
+    color: var(--white);
+  }
+}

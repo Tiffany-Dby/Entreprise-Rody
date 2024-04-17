@@ -1,6 +1,11 @@
 ---
 import KeyCard from "./KeyCard.astro";
 
+import experienceImg from "@assets/images/Experience.svg";
+import warrantyImg from "@assets/images/Warranty.svg";
+import maintenanceImg from "@assets/images/Maintenance.svg";
+import communicationImg from "@assets/images/Communication.svg";
+
 const getYearsSpent = (startingYear) => new Date().getFullYear() - startingYear;
 ---
 
@@ -8,15 +13,17 @@ const getYearsSpent = (startingYear) => new Date().getFullYear() - startingYear;
   @use "../styles/mixins" as *;
 
   section {
-    @include container($padding: var(--padding-m) var(--padding-s));
-    text-align: center;
+    @include container(
+      $padding: var(--padding-m) var(--padding-s) var(--padding-xl)
+    );
+    @include flex("column", "nowrap");
+    gap: 3rem;
 
     div {
       @include flex;
       justify-content: center;
       gap: 2rem;
       margin: 0 auto;
-      padding-top: var(--padding-m);
       max-width: 900px;
 
       @media screen and (min-width: 1230px) {
@@ -24,9 +31,9 @@ const getYearsSpent = (startingYear) => new Date().getFullYear() - startingYear;
       }
     }
 
-    span {
+    strong {
       font-weight: var(--fw-bold);
-      color: var(--primary);
+      color: var(--primary-125);
     }
   }
 </style>
@@ -35,33 +42,34 @@ const getYearsSpent = (startingYear) => new Date().getFullYear() - startingYear;
   <h2>Mon entreprise c'est ...</h2>
 
   <div>
-    <KeyCard title="Un savoir faire">
+    <KeyCard title="Un savoir faire" imgPath={experienceImg} imgAlt="">
       <p>
-        Fort de <span>{getYearsSpent(1994)} ans</span> d'expérience, et d'une entreprise
-        de {getYearsSpent(2000)} ans d'existence, je façonne votre pièce à vivre
-        avec <span>passion</span> et <span>précision</span>.
+        Fort de <strong>{getYearsSpent(1994)} ans</strong> d'expérience, et d'une
+        entreprise de {getYearsSpent(2000)} ans d'existence, je façonne votre pièce
+        à vivre avec <strong>passion</strong> et <strong>précision</strong>.
       </p>
     </KeyCard>
-    <KeyCard title="Une tranquilité">
+    <KeyCard title="Une tranquilité" imgPath={warrantyImg} imgAlt="">
       <p>
-        Une garantie de <span>10 ans</span> sur chaque installation, c'est l'engagement
-        d'<span>un travail de qualité</span> pour que vous puissiez profiter en toute
-        sérénité.
+        Une garantie de <strong>10 ans</strong> sur chaque installation, c'est l'engagement
+        d'<strong>un travail de qualité</strong> pour que vous puissiez profiter
+        en toute sérénité.
       </p>
     </KeyCard>
-    <KeyCard title="Un suivi">
+    <KeyCard title="Un suivi" imgPath={maintenanceImg} imgAlt="">
       <p>
-        Mon engagement se poursuit <span>même après la garantie</span>. Je reste
-        disponible pour toute <span>maintenance</span> afin d'assurer la longévité
-        de votre cuisine.
+        Mon engagement se poursuit <strong>même après la garantie</strong>. Je
+        reste disponible pour toute <strong>maintenance</strong> afin d'assurer la
+        longévité de votre cuisine.
       </p>
     </KeyCard>
-    <KeyCard title="Une oreille attentive">
+    <KeyCard title="Une oreille attentive" imgPath={communicationImg} imgAlt="">
       <p>
         À l'écoute de vos besoins et envies, afin de vous
-        <span>conseiller</span> les
-        <span>meilleurs modèles</span> et <span>cuisinistes de confiance</span> pour
-        concrétiser votre projet.
+        <strong>conseiller</strong> les
+        <strong>meilleurs modèles</strong> et <strong
+          >cuisinistes de confiance</strong
+        > pour concrétiser votre projet.
       </p>
     </KeyCard>
   </div>

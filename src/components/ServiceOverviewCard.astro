@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { iconName, serviceName } = Astro.props;
+---
+
+<style lang="scss">
+  @use "../styles/mixins" as *;
+
+  li {
+    @include flex;
+    gap: 0.5rem;
+
+    strong {
+      font-size: var(--font-size-m);
+    }
+
+    [data-icon] {
+      @include flex;
+      font-size: 3rem;
+      color: var(--tertiary-125);
+    }
+  }
+</style>
+
+<li>
+  <div>
+    <Icon name={iconName} />
+  </div>
+  <strong>{serviceName}</strong>
+</li>

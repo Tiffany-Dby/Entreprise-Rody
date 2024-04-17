@@ -1,18 +1,38 @@
 ---
-
+import kitchenOneBefore from "@assets/images/kitchen1-before.jpg";
+import kitchenOneAfter from "@assets/images/kitchen1-after.jpg";
+import KitchenOverviewCard from "./KitchenOverviewCard.astro";
 ---
 
 <style lang="scss">
   @use "../styles/mixins" as *;
 
   .gallery-overview {
-    min-height: 200px;
-    background-color: var(--secondary-25);
+    background-color: var(--primary-25);
+
     &__container {
-      @include container($padding: var(--padding-m));
+      @include container(
+        $padding: var(--padding-m) var(--padding-s) var(--padding-xl)
+      );
+      @include flex("column", "nowrap");
+      gap: 3rem;
     }
-    h2 {
-      text-align: center;
+
+    &__kitchens {
+      @include flex;
+      justify-content: space-between;
+      column-gap: 2rem;
+      row-gap: 2.5rem;
+    }
+
+    a {
+      @include button;
+    }
+
+    div:has(.btn) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 </style>
@@ -21,10 +41,63 @@
   <div class="gallery-overview__container">
     <h2>Une transformation</h2>
     <p>
-      Plongez dans nos exemples de cuisines avant et après notre intervention
-      pour découvrir comment nous métamorphosons votre espace de vie. Êtes-vous
-      prêt à être inspiré et faire de votre cuisine un sanctuaire de style et de
+      Plongez dans nos exemples de cuisines avant et après mon intervention pour
+      découvrir comment je métamorphose votre espace de vie. Êtes-vous prêt à
+      être inspiré et faire de votre cuisine un sanctuaire de style et de
       fonctionnalités?
     </p>
+    <div class="gallery-overview__kitchens">
+      <KitchenOverviewCard
+        imgBeforePath={kitchenOneBefore}
+        imgBeforeAlt=""
+        imgAfterPath={kitchenOneAfter}
+        imgAfterAlt=""
+        kitchenName="La cuisine Lotus"
+        kitchenDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?"
+      />
+      <KitchenOverviewCard
+        imgBeforePath={kitchenOneBefore}
+        imgBeforeAlt=""
+        imgAfterPath={kitchenOneAfter}
+        imgAfterAlt=""
+        kitchenName="La cuisine Lotus"
+        kitchenDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?"
+      />
+      <KitchenOverviewCard
+        imgBeforePath={kitchenOneBefore}
+        imgBeforeAlt=""
+        imgAfterPath={kitchenOneAfter}
+        imgAfterAlt=""
+        kitchenName="La cuisine Lotus"
+        kitchenDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?"
+      />
+      <KitchenOverviewCard
+        imgBeforePath={kitchenOneBefore}
+        imgBeforeAlt=""
+        imgAfterPath={kitchenOneAfter}
+        imgAfterAlt=""
+        kitchenName="La cuisine Lotus"
+        kitchenDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?"
+      />
+      <KitchenOverviewCard
+        imgBeforePath={kitchenOneBefore}
+        imgBeforeAlt=""
+        imgAfterPath={kitchenOneAfter}
+        imgAfterAlt=""
+        kitchenName="La cuisine Lotus"
+        kitchenDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?"
+      />
+      <KitchenOverviewCard
+        imgBeforePath={kitchenOneBefore}
+        imgBeforeAlt=""
+        imgAfterPath={kitchenOneAfter}
+        imgAfterAlt=""
+        kitchenName="La cuisine Lotus"
+        kitchenDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?"
+      />
+    </div>
+    <div>
+      <a class="btn" href="/">Je veux voir d'autres cuisines !</a>
+    </div>
   </div>
 </section>

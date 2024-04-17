@@ -20,24 +20,43 @@
   font-family: "Roboto";
   src: url(../assets/fonts/Roboto/Roboto-Bold.ttf) format('truetype');
   font-display: swap;
-  font-weight: bold;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../assets/fonts/Roboto/Roboto-Medium.ttf) format('truetype');
+  font-display: swap;
+  font-weight: 500;
   font-style: normal;
 }
 
 :root {
   // COLORS
-  --primary: #0985CE;
+  --primary: #447bce;
+  --primary-125: #37588a;
+  --primary-50: #90b5ec;
+  --primary-25: #f8fbff;
   --secondary: #ADE7FF;
-  --secondary-25: #ebf9ff;
-  --tertiary: #86A9C5;
+  --secondary-125: #67cffc;
+  --secondary-50: #ccf0ff;
+  --secondary-25: #f2fbff;
+  --tertiary: #6F899E;
+  --tertiary-125: #455461;
+  --tertiary-50: #a9b8c5;
+  --tertiary-25: #f7faff;
   --white: #fefefe;
   --black: #111111;
-  --dark-grey: #303131;
+  --dark-grey: #313131;
 
   // GRADIENTS
   --linear-gradient-primary-transparent-45deg: linear-gradient(45deg,
       rgba(68, 123, 206, 1) 0%,
       rgba(9, 133, 206, 0) 100%);
+  --linear-gradient-transparent-primary-45deg: linear-gradient(15deg,
+      rgba(9, 133, 206, 0) 0%,
+      rgba(68, 123, 206, 1) 100%);
 
   // PADDING
   --padding-xxs: .4rem;
@@ -57,6 +76,8 @@
 
   // SHADOW
 
+  // SLIDER
+  --slider-position: 50%;
 
   // FONT SIZE
   --font-label: 1.3rem;

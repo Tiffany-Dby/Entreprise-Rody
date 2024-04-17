@@ -4,17 +4,21 @@ import ExperienceKeys from "@components/ExperienceKeys.astro";
 import Footer from "@components/Footer.astro";
 import GalleryOverview from "@components/GalleryOverview.astro";
 import Header from "@components/Header.astro";
+import ServicesOverview from "@components/ServicesOverview.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+
+const headTitle = "Home";
 ---
 
 <style lang="scss">
 	@use "../styles/mixins" as *;
 </style>
 
-<BaseLayout>
+<BaseLayout headTitle={headTitle}>
 	<Header />
 	<Banner />
 	<ExperienceKeys />
 	<GalleryOverview />
+	<ServicesOverview />
 	<Footer />
 </BaseLayout>

@@ -1,5 +1,7 @@
 ---
-const { title } = Astro.props;
+import { Image } from "astro:assets";
+
+const { title, imgPath, imgAlt } = Astro.props;
 ---
 
 <style lang="scss">
@@ -7,10 +9,10 @@ const { title } = Astro.props;
 
   article {
     @include flex("column", "nowrap");
-    box-shadow: inset 0px 0px 0px 1px rgba(173, 173, 173, 0.301);
+    padding: var(--padding-s);
     border-radius: var(--radius-m);
     text-align: center;
-    padding: var(--padding-s);
+    box-shadow: inset 0px 0px 0px 1px rgba(173, 173, 173, 0.301);
 
     @media screen and (min-width: 550px) {
       max-width: calc(100% / 2 - var(--padding-s));
@@ -18,10 +20,23 @@ const { title } = Astro.props;
     @media screen and (min-width: 1230px) {
       max-width: calc(100% / 4 - var(--padding-s));
     }
+
+    .img {
+      margin: 0 auto;
+      max-width: 85px;
+      max-height: 90px;
+
+      img {
+        object-fit: contain;
+      }
+    }
   }
 </style>
 
 <article>
+  <div class="img">
+    <Image src={imgPath} alt={imgAlt} />
+  </div>
   <h3>{title}</h3>
   <div>
     <slot />

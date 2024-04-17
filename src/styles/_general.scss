@@ -34,6 +34,19 @@ p {
   margin: 0;
 }
 
+h1 {
+  font-size: var(--font-size-3xl);
+}
+
+h2 {
+  font-size: var(--font-size-xxl);
+  // text-align: center;
+}
+
+h3 {
+  font-size: var(--font-size-xl);
+}
+
 ul {
   margin: 0;
   padding: 0;

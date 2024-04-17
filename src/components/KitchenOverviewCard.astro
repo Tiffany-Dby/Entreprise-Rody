@@ -1,0 +1,164 @@
+---
+import { Image } from "astro:assets";
+
+const {
+  kitchenName,
+  kitchenDescription,
+  imgBeforePath,
+  imgBeforeAlt,
+  imgAfterPath,
+  imgAfterAlt,
+} = Astro.props;
+---
+
+<style lang="scss">
+  @use "../styles/mixins" as *;
+
+  .img {
+    &__kitchen-before-after {
+      background-color: var(--black);
+      border-radius: var(--radius-s);
+      box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
+      background-image: var(--linear-gradient-transparent-primary-45deg);
+      transition: background-color 0.5s ease;
+
+      &:hover {
+        background-color: var(--dark-grey);
+      }
+
+      @media screen and (min-width: 767px) {
+        max-width: calc(100% / 2 - var(--padding-s));
+      }
+      @media screen and (min-width: 1024px) {
+        max-width: calc(100% / 3 - var(--padding-s));
+      }
+
+      h3,
+      p {
+        color: var(--white);
+      }
+
+      h3 {
+        text-align: center;
+      }
+
+      p {
+        padding: 0 var(--padding-s) var(--padding-s);
+      }
+    }
+
+    &__container {
+      position: relative;
+      display: grid;
+      overflow: hidden;
+      border-radius: var(--radius-s) var(--radius-s) 0 0;
+
+      & > * {
+        grid-area: 1 / 1;
+      }
+    }
+
+    &__slider {
+      opacity: 0;
+      cursor: pointer;
+
+      &:focus-visible ~ &-btn {
+        outline: 3px solid var(--black);
+        outline-offset: 2px;
+      }
+
+      &-btn {
+        align-self: center;
+        @include flex;
+        @include center;
+        height: 44px;
+        width: 44px;
+        border-radius: 100%;
+        color: var(--white);
+        box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.65);
+      }
+    }
+
+    &__slider,
+    &__slider-btn,
+    &__line {
+      z-index: 1;
+    }
+
+    &__slider-btn,
+    &__line {
+      position: absolute;
+      left: var(--slider-position);
+      transform: translateX(-50%);
+      background-color: var(--primary-125);
+      pointer-events: none;
+      transition: background-color 0.5s ease;
+    }
+
+    &__line {
+      height: 100%;
+      width: 3px;
+    }
+
+    &--before {
+      z-index: 0;
+      object-position: left;
+      width: var(--slider-position);
+    }
+  }
+</style>
+
+<article class="img__kitchen-before-after">
+  <div class="img__container">
+    <Image
+      class="img--before img--slide"
+      src={imgBeforePath}
+      alt={imgBeforeAlt}
+    />
+    <Image class="img--after img--slide" src={imgAfterPath} alt={imgAfterAlt} />
+    <input
+      type="range"
+      name=""
+      id=""
+      min="0"
+      max="100"
+      value="50"
+      class="img__slider"
+      aria-label="Pourcentage de l'image 'avant' montrée"
+    />
+    <div class="img__line"></div>
+    <div class="img__slider-btn" aria-hidden="true">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        fill="currentColor"
+        viewBox="0 0 256 256"
+        ><path
+          d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"
+        ></path></svg
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        fill="currentColor"
+        viewBox="0 0 256 256"
+        ><path
+          d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
+        ></path></svg
+      >
+    </div>
+  </div>
+  <h3>{kitchenName}</h3>
+  <p>{kitchenDescription}</p>
+</article>
+
+<script>
+  const containerElts = document.querySelectorAll(".img__container");
+
+  containerElts.forEach((container) => {
+    container.querySelector(".img__slider").addEventListener("input", (e) => {
+      container.style.setProperty("--slider-position", `${e.target.value}%`);
+    });
+  });
+</script>

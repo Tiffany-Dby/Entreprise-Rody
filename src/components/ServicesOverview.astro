@@ -1,0 +1,98 @@
+---
+import ServiceOverviewCard from "./ServiceOverviewCard.astro";
+---
+
+<style lang="scss">
+  @use "../styles/mixins" as *;
+
+  .services-overview {
+    @include container(
+      "900px",
+      var(--padding-m) var(--padding-s) var(--padding-xl)
+    );
+    display: grid;
+
+    @media screen and (min-width: 767px) {
+      @include flex;
+      justify-content: space-between;
+    }
+
+    &--left {
+      @include flex("column", "nowrap");
+      gap: 3rem;
+
+      @media screen and (min-width: 767px) {
+        width: 40%;
+      }
+    }
+
+    &--right {
+      display: grid;
+      grid-template-columns: 30px 1fr 30px;
+      grid-template-rows: 30px 1fr 30px;
+      justify-self: end;
+      width: fit-content;
+
+      ul {
+        grid-column: 1 / 3;
+        grid-row: 2 / -1;
+        @include flex("column", "nowrap");
+        gap: 3rem;
+        padding: var(--padding-m);
+        width: fit-content;
+        box-shadow: inset 0px 0px 0px 1px rgba(173, 173, 173, 0.301);
+        background-color: var(--white);
+
+        @media screen and (min-width: 767px) {
+          padding: var(--padding-xl);
+        }
+      }
+
+      span {
+        grid-column: 2 / -1;
+        grid-row: 1 / 3;
+        z-index: -1;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: var(--secondary-50);
+      }
+    }
+  }
+</style>
+
+<section class="services-overview">
+  <div class="services-overview--left">
+    <h2>Mes services</h2>
+    <p>Découvrez un aperçu de mes <strong>compétences polyvalentes</strong>.</p>
+    <p>
+      Bien que spécialisé dans la pose de cuisines, je propose également une
+      gamme d'autres services.
+    </p>
+    <div>
+      <a href="/">En savoir plus</a>
+      <a href="/">Me contacter</a>
+    </div>
+  </div>
+  <div class="services-overview--right">
+    <ul>
+      <ServiceOverviewCard
+        iconName="fa6-solid--faucet-drip"
+        serviceName="Plomberie"
+      />
+      <ServiceOverviewCard
+        iconName="healthicons--electricity"
+        serviceName="Électricité"
+      />
+      <ServiceOverviewCard
+        iconName="mdi--bricks"
+        serviceName="Remplacement de façade"
+      />
+      <ServiceOverviewCard
+        iconName="fa6-solid--screwdriver-wrench"
+        serviceName="Entretien & Dépannage"
+      />
+    </ul>
+    <span></span>
+  </div>
+</section>
