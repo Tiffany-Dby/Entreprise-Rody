@@ -1,0 +1,133 @@
+---
+import ContactCard from "./ContactCard.astro";
+import workerImg from "@assets/images/worker.jpg";
+import { Image } from "astro:assets";
+---
+
+<style lang="scss">
+  @use "../styles/mixins" as *;
+
+  .contact {
+    background-color: var(--primary-25);
+
+    &__container {
+      @include container(
+        $padding: var(--padding-m) var(--padding-s) var(--padding-xl)
+      );
+      @include flex;
+      gap: 3rem;
+
+      @media screen and (min-width: 767px) {
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+      }
+    }
+
+    &--infos {
+      display: grid;
+      gap: 2rem;
+
+      @media screen and (min-width: 767px) {
+        width: 50%;
+      }
+
+      h2 {
+        text-align: left;
+      }
+
+      ul {
+        @include flex("column", "nowrap");
+        gap: 1.5rem;
+        max-width: max-content;
+        justify-self: center;
+
+        @media screen and (min-width: 767px) {
+          justify-self: start;
+        }
+      }
+    }
+
+    &--img {
+      display: grid;
+      grid-template-columns: 20px 1fr 20px;
+      grid-template-rows: 20px 1fr 20px;
+
+      @media screen and (min-width: 767px) {
+        width: 50%;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+        display: block;
+        height: 75px;
+        width: 75px;
+      }
+
+      &::before {
+        border-left: 10px solid var(--secondary);
+        border-top: 10px solid var(--secondary);
+      }
+
+      &::after {
+        justify-self: end;
+        align-self: end;
+        border-bottom: 10px solid var(--secondary);
+        border-right: 10px solid var(--secondary);
+      }
+
+      .img {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        position: relative;
+        background-color: var(--black);
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          display: block;
+          background-image: var(--linear-gradient-primary-transparent-45deg);
+        }
+      }
+    }
+  }
+</style>
+
+<section id="contact" class="contact">
+  <div class="contact__container">
+    <div class="contact--infos">
+      <h2>Je suis joignable</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit
+        voluptates optio ipsa iste deserunt non laboriosam? Maxime reiciendis
+        repellendus iure obcaecati, officiis, distinctio libero vitae
+        repudiandae dolorem nam modi quasi.
+      </p>
+      <ul>
+        <ContactCard
+          iconName="line-md--email"
+          text="Email"
+          href="mailto:entreprise_rody@hotmail.com"
+          linkText="entreprise_rody@hotmail.com"
+        />
+        <ContactCard
+          iconName="line-md--phone-call-loop"
+          text="Téléphone"
+          href="tel:+33607407407"
+          linkText="06.07.40.74.07"
+        />
+      </ul>
+    </div>
+    <div class="contact--img">
+      <div class="img">
+        <Image src={workerImg} alt="" />
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 
 const {
   kitchenName,
@@ -16,26 +17,19 @@ const {
 
   .img {
     &__kitchen-before-after {
-      background-color: var(--black);
       border-radius: var(--radius-s);
+      color: var(--white);
+      background-color: var(--black);
+      background-image: var(--linear-gradient-transparent-primary-15deg);
       box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
-      background-image: var(--linear-gradient-transparent-primary-45deg);
       transition: background-color 0.5s ease;
-
-      &:hover {
-        background-color: var(--dark-grey);
-      }
 
       @media screen and (min-width: 767px) {
         max-width: calc(100% / 2 - var(--padding-s));
       }
-      @media screen and (min-width: 1024px) {
-        max-width: calc(100% / 3 - var(--padding-s));
-      }
 
-      h3,
-      p {
-        color: var(--white);
+      &:hover {
+        background-color: var(--dark-grey);
       }
 
       h3 {
@@ -76,6 +70,11 @@ const {
         border-radius: 100%;
         color: var(--white);
         box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.65);
+
+        [data-icon] {
+          height: 18px;
+          width: 18px;
+        }
       }
     }
 
@@ -110,12 +109,8 @@ const {
 
 <article class="img__kitchen-before-after">
   <div class="img__container">
-    <Image
-      class="img--before img--slide"
-      src={imgBeforePath}
-      alt={imgBeforeAlt}
-    />
-    <Image class="img--after img--slide" src={imgAfterPath} alt={imgAfterAlt} />
+    <Image class="img--before" src={imgBeforePath} alt={imgBeforeAlt} />
+    <Image class="img--after" src={imgAfterPath} alt={imgAfterAlt} />
     <input
       type="range"
       name=""
@@ -128,25 +123,8 @@ const {
     />
     <div class="img__line"></div>
     <div class="img__slider-btn" aria-hidden="true">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="22"
-        height="22"
-        fill="currentColor"
-        viewBox="0 0 256 256"
-        ><path
-          d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"
-        ></path></svg
-      ><svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="22"
-        height="22"
-        fill="currentColor"
-        viewBox="0 0 256 256"
-        ><path
-          d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
-        ></path></svg
-      >
+      <Icon name="ep--arrow-left-bold" />
+      <Icon name="ep--arrow-right-bold" />
     </div>
   </div>
   <h3>{kitchenName}</h3>

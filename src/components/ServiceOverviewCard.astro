@@ -8,11 +8,12 @@ const { iconName, serviceName } = Astro.props;
   @use "../styles/mixins" as *;
 
   li {
-    @include flex;
+    @include flex("column", "nowrap");
     gap: 0.5rem;
 
     strong {
       font-size: var(--font-size-m);
+      color: var(--black);
     }
 
     [data-icon] {
