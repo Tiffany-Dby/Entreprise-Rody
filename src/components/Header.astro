@@ -1,5 +1,6 @@
 ---
 import HeaderNavigation from "@components/HeaderNavigation.astro";
+import Burger from "./Burger.astro";
 ---
 
 <style lang="scss">
@@ -12,14 +13,23 @@ import HeaderNavigation from "@components/HeaderNavigation.astro";
     width: 100%;
     font-weight: var(--fw-semi-bold);
     transition: all 0.5s ease;
-    background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(5px);
 
+    @media screen and (min-width: 680px) {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
     &__container {
+      background-color: rgba(0, 0, 0, 0.6);
+      position: relative;
       @include container;
       @include flex;
       justify-content: space-between;
       text-transform: uppercase;
+
+      @media screen and (min-width: 680px) {
+        background-color: transparent;
+      }
     }
   }
 </style>
@@ -29,6 +39,7 @@ import HeaderNavigation from "@components/HeaderNavigation.astro";
     <div class="logo">
       <p>LOGO</p>
     </div>
+    <Burger />
     <HeaderNavigation />
   </div>
 </header>

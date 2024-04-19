@@ -1,37 +1,104 @@
 ---
-
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+const isActive = (path) => (currentPath === path ? "active" : "");
 ---
 
 <style lang="scss">
   @use "../styles/mixins" as *;
 
   nav {
-    width: 70%;
-    max-width: 550px;
+    position: absolute;
+    z-index: -1;
+    top: -500%;
+    right: 0;
+    width: 100%;
+    background-color: rgba(1, 1, 1, 0.85);
 
-    ul {
-      @include flex;
-      justify-content: space-between;
+    transition: all 0.5s ease-in-out;
+    padding-top: 0;
+
+    @media screen and (min-width: 680px) {
+      position: static;
+      z-index: 0;
+      width: 70%;
+      max-width: 550px;
+      background-color: transparent;
+      backdrop-filter: none;
     }
 
-    a {
-      text-decoration: none;
-      color: var(--white);
-      transition: color 0.3s ease;
+    &.nav--open {
+      top: 0;
+    }
 
-      &:hover {
-        color: var(--dark-grey);
+    ul {
+      @include flex("column", "nowrap");
+      gap: 2rem;
+      padding: 100px var(--padding-s) var(--padding-s);
+
+      @media screen and (min-width: 680px) {
+        padding: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
       }
+    }
+
+    li {
+      background-color: rgba(248, 248, 248, 0.178);
+
+      @media screen and (min-width: 680px) {
+        background-color: transparent;
+      }
+
+      a {
+        position: relative;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        padding: var(--padding-xxs) 0;
+        color: var(--white);
+        transition: background-color 0.3s ease;
+
+        &.active::after,
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 2px;
+          width: 0;
+          background-color: transparent;
+          transition: all 0.5s ease;
+        }
+
+        &.active::after,
+        &:hover::after {
+          width: 100%;
+          background-color: var(--secondary);
+        }
+      }
+    }
+
+    &:hover li:not(:hover) .active::after {
+      width: 0;
+      background-color: transparent;
     }
   }
 </style>
 
 <nav>
   <ul>
-    <li><a href="/">Accueil</a></li>
-    <li><a href="/">À propos</a></li>
-    <li><a href="/">Services</a></li>
-    <li><a href="/">Galerie</a></li>
-    <li><a href="/">Contact</a></li>
+    <li><a class={isActive("")} href="/" data-astro-reload>Accueil</a></li>
+    <li>
+      <a class={isActive("about")} href="/">À propos</a>
+    </li>
+    <li>
+      <a class={isActive("services")} href="/">Services</a>
+    </li>
+    <li>
+      <a class={isActive("gallery")} href="/">Galerie</a>
+    </li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>

@@ -1,5 +1,9 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import "../styles/index.scss";
+import Header from "@components/Header.astro";
+import Contact from "@components/Contact.astro";
+import Footer from "@components/Footer.astro";
 
 const { headTitle } = Astro.props;
 ---
@@ -22,8 +26,15 @@ const { headTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <title>{headTitle}</title>
+    <ViewTransitions />
   </head>
   <body>
+    <Header />
     <slot />
+    <Contact />
+    <Footer />
+    <script>
+      import "@scripts/headerMenu.js";
+    </script>
   </body>
 </html>

@@ -34,7 +34,7 @@ const { iconName, text, href, linkText } = Astro.props;
       @include flex;
       height: 55px;
       width: 55px;
-      color: var(--primary);
+      color: var(--primary-125);
       transition: color 0.3s ease;
     }
 
@@ -43,7 +43,7 @@ const { iconName, text, href, linkText } = Astro.props;
     }
 
     a {
-      color: var(--primary);
+      color: var(--primary-125);
       transition: color 0.3s ease;
 
       &:hover {
@@ -53,7 +53,7 @@ const { iconName, text, href, linkText } = Astro.props;
   }
 </style>
 
-<li>
+<li class="card--reveal">
   <Icon name={iconName} />
   <p>{text}</p>
   <div>

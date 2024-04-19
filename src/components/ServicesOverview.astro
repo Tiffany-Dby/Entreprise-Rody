@@ -6,16 +6,20 @@ import ServiceOverviewCard from "./ServiceOverviewCard.astro";
   @use "../styles/mixins" as *;
 
   .services-overview {
-    @include container(
-      "900px",
-      var(--padding-m) var(--padding-s) var(--padding-xl)
-    );
-    display: grid;
-    row-gap: 2rem;
+    background-color: var(--primary-25);
 
-    @media screen and (min-width: 767px) {
-      @include flex;
-      justify-content: space-between;
+    &__container {
+      @include container(
+        "900px",
+        var(--padding-m) var(--padding-s) var(--padding-xl)
+      );
+      display: grid;
+      row-gap: 2rem;
+
+      @media screen and (min-width: 767px) {
+        @include flex;
+        justify-content: space-between;
+      }
     }
 
     h2 {
@@ -36,7 +40,7 @@ import ServiceOverviewCard from "./ServiceOverviewCard.astro";
         align-items: center;
 
         a:nth-child(1) {
-          color: var(--primary);
+          color: var(--primary-125);
           transition: color 0.3s ease;
 
           &:hover {
@@ -63,6 +67,7 @@ import ServiceOverviewCard from "./ServiceOverviewCard.astro";
       ul {
         grid-column: 1 / 3;
         grid-row: 2 / -1;
+        z-index: 0;
         @include flex("column", "nowrap");
         gap: 3rem;
         padding: var(--padding-m);
@@ -85,7 +90,6 @@ import ServiceOverviewCard from "./ServiceOverviewCard.astro";
       span {
         grid-column: 2 / -1;
         grid-row: 1 / 3;
-        z-index: -1;
         display: block;
         width: 100%;
         height: 100%;
@@ -96,38 +100,42 @@ import ServiceOverviewCard from "./ServiceOverviewCard.astro";
 </style>
 
 <section class="services-overview">
-  <div class="services-overview--left">
-    <h2>Mes services</h2>
-    <p>Découvrez un aperçu de mes <strong>compétences polyvalentes</strong>.</p>
-    <p>
-      Bien que <strong>spécialisé</strong> dans la <strong
-        >pose de cuisines</strong
-      >, je propose également une gamme d'autres services.
-    </p>
-    <div>
-      <a href="/">En savoir plus</a>
-      <a href="/">Me contacter</a>
+  <div class="services-overview__container">
+    <div class="services-overview--left">
+      <h2>Mes services</h2>
+      <p>
+        Découvrez un aperçu de mes <strong>compétences polyvalentes</strong>.
+      </p>
+      <p>
+        Bien que <strong>spécialisé</strong> dans la <strong
+          >pose de cuisines</strong
+        >, je propose également une gamme d'autres services.
+      </p>
+      <div>
+        <a href="/">En savoir plus</a>
+        <a href="#contact">Me contacter</a>
+      </div>
     </div>
-  </div>
-  <div class="services-overview--right">
-    <ul>
-      <ServiceOverviewCard
-        iconName="fa6-solid--faucet-drip"
-        serviceName="Plomberie"
-      />
-      <ServiceOverviewCard
-        iconName="healthicons--electricity"
-        serviceName="Électricité"
-      />
-      <ServiceOverviewCard
-        iconName="mdi--bricks"
-        serviceName="Remplacement de façade"
-      />
-      <ServiceOverviewCard
-        iconName="fa6-solid--screwdriver-wrench"
-        serviceName="Entretien & Dépannage"
-      />
-    </ul>
-    <span></span>
+    <div class="services-overview--right">
+      <ul>
+        <ServiceOverviewCard
+          iconName="fa6-solid--faucet-drip"
+          serviceName="Plomberie"
+        />
+        <ServiceOverviewCard
+          iconName="healthicons--electricity"
+          serviceName="Électricité"
+        />
+        <ServiceOverviewCard
+          iconName="mdi--bricks"
+          serviceName="Remplacement de façade"
+        />
+        <ServiceOverviewCard
+          iconName="fa6-solid--screwdriver-wrench"
+          serviceName="Entretien & Dépannage"
+        />
+      </ul>
+      <span></span>
+    </div>
   </div>
 </section>

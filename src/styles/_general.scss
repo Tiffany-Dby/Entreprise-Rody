@@ -61,3 +61,14 @@ ul {
 strong {
   color: var(--primary-125);
 }
+
+.card--reveal {
+  transform: translateX(150px);
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.card--reveal.card--active {
+  transform: translateX(0);
+  opacity: 1;
+}
