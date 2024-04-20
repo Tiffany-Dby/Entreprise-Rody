@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import logoERB from "@assets/images/ERB-logo-light.svg";
+---
+
+<style lang="scss">
+  @use "../styles/mixins" as *;
+
+  .logo {
+    min-width: 60px;
+    max-width: 70px;
+    width: 100%;
+    display: flex;
+    @include center;
+
+    a {
+      display: flex;
+    }
+
+    img {
+      object-fit: contain;
+    }
+  }
+</style>
+
+<div class="logo">
+  <a href="/" data-astro-reload>
+    <Image src={logoERB} alt="Logo Entreprise Rody de Bâtiment" />
+  </a>
+</div>

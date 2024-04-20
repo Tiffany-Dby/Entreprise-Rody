@@ -1,6 +1,7 @@
 ---
+import Logo from "@components/Logo.astro";
 import HeaderNavigation from "@components/HeaderNavigation.astro";
-import Burger from "./Burger.astro";
+import Burger from "@components/Burger.astro";
 ---
 
 <style lang="scss">
@@ -34,11 +35,9 @@ import Burger from "./Burger.astro";
   }
 </style>
 
-<header class="header">
+<header id="header" class="header">
   <div class="header__container">
-    <div class="logo">
-      <p>LOGO</p>
-    </div>
+    <Logo />
     <Burger />
     <HeaderNavigation />
   </div>

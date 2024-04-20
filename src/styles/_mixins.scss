@@ -22,18 +22,17 @@
   flex-grow: #{$size};
 }
 
-@mixin button() {
+@mixin button {
   text-decoration: none;
+  font-weight: var(--fw-semi-bold);
   padding: var(--padding-xs) var(--padding-s);
   border-radius: var(--radius-l);
-  background-color: var(--primary);
-  background-image: var(--linear-gradient-primary-transparent-45deg);
-  color: var(--white);
-  font-weight: var(--fw-medium);
+  color: var(--primary);
+  border: 3px solid var(--primary);
   transition: all 0.5s ease;
 
   &:hover {
-    background-color: var(--primary-125);
+    background-color: var(--primary);
     color: var(--white);
   }
 }

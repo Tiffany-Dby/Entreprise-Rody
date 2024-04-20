@@ -132,23 +132,3 @@ import { Image } from "astro:assets";
     </div>
   </div>
 </section>
-
-<script>
-  const reveal = () => {
-    const revealElts = document.querySelectorAll(".card--reveal");
-
-    revealElts.forEach((r, i) => {
-      const windowHeight = window.innerHeight;
-      const eltTop = r.getBoundingClientRect().top;
-      const eltVisible = 150;
-
-      if (eltTop < windowHeight - eltVisible) {
-        r.classList.add("card--active");
-        r.style.transitionDelay = `${i * 0.15}s`;
-      }
-    });
-  };
-
-  window.addEventListener("scroll", reveal);
-  reveal();
-</script>
