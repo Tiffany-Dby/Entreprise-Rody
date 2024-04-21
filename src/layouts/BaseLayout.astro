@@ -1,6 +1,8 @@
 ---
-import { ViewTransitions } from "astro:transitions";
 import "../styles/index.scss";
+
+import { ViewTransitions } from "astro:transitions";
+
 import Header from "@components/Header.astro";
 import Contact from "@components/Contact.astro";
 import Footer from "@components/Footer.astro";
@@ -18,7 +20,7 @@ const { headTitle } = Astro.props;
     />
     <meta
       name="keywords"
-      content="cuisine, cuisiniste, pose de cuisine, artisan"
+      content="cuisine, cuisiniste, pose de cuisine, installation de cuisine, artisan"
     />
     <meta name="author" content="Tiffany Dbeissy" />
     <meta name="generator" content={Astro.generator} />
@@ -28,11 +30,17 @@ const { headTitle } = Astro.props;
     <title>{headTitle}</title>
     <ViewTransitions />
   </head>
+
   <body>
     <Header />
-    <slot />
-    <Contact />
+
+    <main>
+      <slot />
+      <Contact />
+    </main>
+
     <Footer />
+
     <script>
       import "@scripts/headerMenu.js";
       import "@scripts/revealElements.js";

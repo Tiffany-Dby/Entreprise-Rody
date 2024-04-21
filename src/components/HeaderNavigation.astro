@@ -91,10 +91,10 @@ const isActive = (path) => (currentPath === path ? "active" : "");
   <ul>
     <li><a class={isActive("")} href="/" data-astro-reload>Accueil</a></li>
     <li>
-      <a class={isActive("about")} href="/">À propos</a>
+      <a class={isActive("about")} href="/about/">À propos</a>
     </li>
     <li>
-      <a class={isActive("services")} href="/">Services</a>
+      <a href="/#services">Services</a>
     </li>
     <li>
       <a class={isActive("gallery")} href="/">Galerie</a>

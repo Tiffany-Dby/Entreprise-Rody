@@ -1,0 +1,119 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { slide } from "astro:transitions";
+
+const headTitle = "À propos";
+---
+
+<style lang="scss">
+  @use "../styles/mixins" as *;
+
+  h2 {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      background-color: var(--primary);
+      display: block;
+    }
+
+    &::after {
+      transform: translate(-50%, -50%);
+      height: 1px;
+      width: 100%;
+      max-width: 200px;
+      border-radius: var(--radius-l);
+    }
+
+    &::before {
+      height: 10px;
+      width: 10px;
+      transform: rotate(45deg) translateX(50%);
+    }
+  }
+
+  article {
+    @include container(
+      900px,
+      var(--padding-m) var(--padding-s) var(--padding-xl)
+    );
+    @include flex("column", "nowrap");
+    gap: 3rem;
+    text-align: justify;
+
+    section {
+      & + section::before {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 100%;
+        border-radius: var(--radius-l);
+        max-width: 450px;
+        margin: 0 auto 3rem;
+      }
+
+      &:nth-child(odd)::before {
+        background-image: var(--linear-gradient-primary-transparent-45deg);
+      }
+      &:nth-child(even)::before {
+        background-image: var(--linear-gradient-transparent-primary-45deg);
+      }
+    }
+  }
+</style>
+
+<BaseLayout headTitle={headTitle}>
+  <h1 transition:animate={slide({ duration: "0.7s" })}>{headTitle}</h1>
+
+  <article>
+    <h2>Présentation : Parcours & Expertise</h2>
+
+    <section>
+      <h3>Mes débuts</h3>
+      <p>
+        Depuis 1995, je suis actif dans le secteur du BTP, où j'ai acquis une
+        solide expérience dans divers domaines tels que la plomberie,
+        l'électricité et les revêtements de sol et de mur, notamment le
+        carrelage, le parquet et les miroirs. Grâce à une formation en
+        électricité et en plomberie, j'ai consolidé mes compétences techniques
+        pour offrir des services de qualité à mes clients.
+      </p>
+    </section>
+
+    <section>
+      <h3>Mon entreprise voit le jour</h3>
+      <p>
+        En octobre 2000, j'ai franchi le pas en créant ma propre entreprise.
+        Depuis lors, j'ai eu le privilège de prendre en charge des projets de
+        moyenne et grande envergure en rénovation, principalement pour des
+        particuliers.
+      </p>
+    </section>
+
+    <section>
+      <h3>La spécialisation</h3>
+      <p>
+        En 2008, j'ai élargi mes compétences pour inclure la menuiserie et la
+        pose de cuisines, tout en offrant également des services d'installation
+        de dressing, placards, bibliothèques, parquets, et bien d'autres encore.
+        Cette diversification m'a permis de répondre aux besoins variés de mes
+        clients, en leur proposant des solutions sur mesure et de haute qualité.
+      </p>
+    </section>
+
+    <section>
+      <h3>Des collaborations</h3>
+      <p>
+        Je suis fier de travailler en tant qu'indépendant, sous-traitant pour
+        plusieurs cuisinistes et marques réputées. Mon engagement envers
+        l'excellence et la satisfaction du client reste ma priorité absolue, et
+        je m'efforce continuellement de fournir un travail de qualité et un
+        service personnalisé à chaque projet.
+      </p>
+    </section>
+  </article>
+</BaseLayout>

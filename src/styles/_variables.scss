@@ -34,7 +34,7 @@
 
 :root {
   // COLORS
-  --primary: #447bce;
+  --primary: #4175c4;
   --primary-125: #37588a;
   --primary-50: #90b5ec;
   --primary-25: #f8fbff;
@@ -54,6 +54,9 @@
   --linear-gradient-primary-transparent-45deg: linear-gradient(45deg,
       rgba(68, 123, 206, 1) 0%,
       rgba(9, 133, 206, 0) 100%);
+  --linear-gradient-transparent-primary-45deg: linear-gradient(45deg,
+      rgba(9, 133, 206, 0)0%,
+      rgba(68, 123, 206, 1) 100%);
   --linear-gradient-transparent-primary-15deg: linear-gradient(15deg,
       rgba(9, 133, 206, 0) 0%,
       rgba(68, 123, 206, 1) 100%);

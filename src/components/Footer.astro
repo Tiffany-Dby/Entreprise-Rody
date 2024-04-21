@@ -19,32 +19,32 @@ import Logo from "@components/Logo.astro";
       place-items: center;
       gap: 4rem;
 
-      @media screen and (min-width: 580px) {
-        grid-template-columns: 70px 1fr;
-      }
+      // @media screen and (min-width: 580px) {
+      //   grid-template-columns: 70px 1fr;
+      // }
     }
 
-    nav {
-      justify-self: start;
-      width: 100%;
+    // nav {
+    //   justify-self: start;
+    //   width: 100%;
 
-      ul {
-        @include flex("column", "nowrap");
-        gap: 2.5rem;
+    //   ul {
+    //     @include flex("column", "nowrap");
+    //     gap: 2.5rem;
 
-        @media screen and (min-width: 580px) {
-          flex-direction: row;
-          flex-wrap: wrap;
-        }
-      }
-    }
+    //     @media screen and (min-width: 580px) {
+    //       flex-direction: row;
+    //       flex-wrap: wrap;
+    //     }
+    //   }
+    // }
 
     p {
       font-size: var(--font-label);
 
-      @media screen and (min-width: 580px) {
-        grid-column: 1 / -1;
-      }
+      // @media screen and (min-width: 580px) {
+      //   grid-column: 1 / -1;
+      // }
     }
   }
 </style>
@@ -52,13 +52,6 @@ import Logo from "@components/Logo.astro";
 <footer class="footer">
   <div class="footer__container">
     <Logo />
-    <nav>
-      <ul>
-        <li><a href="#">Mentions légales</a></li>
-        <li><a href="#">Un lien</a></li>
-        <li><a href="#">Un lien</a></li>
-      </ul>
-    </nav>
     <p>
       &#169; Entreprise Rody de Bâtiment 2024 - made by <a
         href="https://github.com/Tiffany-Dby"

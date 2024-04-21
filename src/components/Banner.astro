@@ -16,10 +16,14 @@
 
     h1 {
       font-size: var(--font-size-3xl);
+      color: var(--white);
+      background-color: transparent;
     }
 
     &__container {
+      @include container;
       @include flex("column", "nowrap");
+      gap: 1rem;
       text-align: center;
 
       p {
@@ -27,12 +31,77 @@
         font-size: var(--font-size-l);
       }
     }
+
+    &__slider {
+      height: 50px;
+      max-width: fit-content;
+      margin: 0 auto;
+      overflow: hidden;
+      box-shadow: 0px 0px 0px 2px white;
+      background-color: rgba(0, 0, 0, 0.3);
+
+      ul {
+        @include flex("column-reverse", "nowrap");
+        height: 100%;
+        padding: 0 var(--padding-s);
+        animation: wordSwap 12s infinite ease-in-out;
+      }
+
+      li {
+        display: grid;
+        flex-shrink: 0;
+        height: 100%;
+        width: 100%;
+        font-size: var(--font-size-l);
+
+        p {
+          align-self: center;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  @keyframes wordSwap {
+    0%,
+    15% {
+      transform: translateY(0);
+    }
+    20%,
+    35% {
+      transform: translateY(100%);
+    }
+    40%,
+    55% {
+      transform: translateY(200%);
+    }
+    60%,
+    75% {
+      transform: translateY(300%);
+    }
+    80%,
+    95% {
+      transform: translateY(400%);
+    }
+    100% {
+      transform: translateY(500%);
+    }
   }
 </style>
 
 <section class="banner" role="banner">
   <div class="banner__container">
     <h1>Entreprise Rody de Bâtiment</h1>
-    <p>Transformez votre cuisine en un espace de rêve</p>
+    <p>Transformez votre cuisine en un espace</p>
+    <div class="banner__slider">
+      <ul>
+        <li><p>convivial</p></li>
+        <li><p>fonctionnel</p></li>
+        <li><p>moderne</p></li>
+        <li><p>confortable</p></li>
+        <li><p>design</p></li>
+        <li><p>convivial</p></li>
+      </ul>
+    </div>
   </div>
 </section>
