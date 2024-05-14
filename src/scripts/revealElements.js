@@ -1,22 +1,21 @@
-const reveal = () => {
+document.addEventListener('astro:page-load', () => {
   const contactElts = document.querySelectorAll(".card__contact--reveal");
   const keyElts = document.querySelectorAll(".card__key--reveal");
 
-  const setActive = (elts, addDuration) => {
-    elts.forEach((e, i) => {
-      const windowHeight = window.innerHeight;
-      const eltTop = e.getBoundingClientRect().top;
-      const eltVisible = 100;
-
-      if (eltTop < windowHeight - eltVisible) {
-        e.classList.add("card--active");
-        e.style.animationDuration = `${1 + i * addDuration}s`;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((element, i) => {
+      if (element.isIntersecting) {
+        element.target.classList.add("card--active");
+        element.target.style.animationDuration = `${1 + i * 0.25}s`;
       }
     });
+  });
+
+  for (const element of contactElts) {
+    observer.observe(element);
   }
 
-  setActive(contactElts, 0.25);
-  setActive(keyElts, 0.25);
-};
-
-window.addEventListener("scroll", reveal);
+  for (const element of keyElts) {
+    observer.observe(element);
+  }
+});
