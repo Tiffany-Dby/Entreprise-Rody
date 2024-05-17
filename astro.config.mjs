@@ -5,5 +5,4 @@ import icon from "astro-icon";
 export default defineConfig({
   integrations: [icon()],
   site: 'https://tiffany-dby.github.io',
-  base: 'entreprise-rody'
 });
