@@ -19,6 +19,37 @@ const contactData = [
 ];
 ---
 
+<section id="contact" class="contact">
+  <div class="contact__container">
+    <div class="contact--infos">
+      <h2>Je suis joignable</h2>
+      <p>
+        Que vous soyez un particulier à la recherche de conseils pour votre
+        projet de cuisine ou un cuisiniste désireux de collaborer, je suis à
+        votre disposition. N'hésitez pas à me contacter pour discuter de vos
+        besoins et projets.
+      </p>
+      <ul>
+        {
+          contactData.map((data) => (
+            <ContactCard
+              iconName={data.iconName}
+              text={data.text}
+              href={data.href}
+              linkText={data.linkText}
+            />
+          ))
+        }
+      </ul>
+    </div>
+    <div class="contact--img">
+      <div class="img">
+        <Image src={workerImg} alt="Rifaat Dbeissy - Chef de l'entreprise" />
+      </div>
+    </div>
+  </div>
+</section>
+
 <style lang="scss">
   @use "../styles/mixins" as *;
 
@@ -114,34 +145,3 @@ const contactData = [
     }
   }
 </style>
-
-<section id="contact" class="contact">
-  <div class="contact__container">
-    <div class="contact--infos">
-      <h2>Je suis joignable</h2>
-      <p>
-        Que vous soyez un particulier à la recherche de conseils pour votre
-        projet de cuisine ou un cuisiniste désireux de collaborer, je suis à
-        votre disposition. N'hésitez pas à me contacter pour discuter de vos
-        besoins et projets.
-      </p>
-      <ul>
-        {
-          contactData.map((data) => (
-            <ContactCard
-              iconName={data.iconName}
-              text={data.text}
-              href={data.href}
-              linkText={data.linkText}
-            />
-          ))
-        }
-      </ul>
-    </div>
-    <div class="contact--img">
-      <div class="img">
-        <Image src={workerImg} alt="Rifaat Dbeissy - Chef de l'entreprise" />
-      </div>
-    </div>
-  </div>
-</section>

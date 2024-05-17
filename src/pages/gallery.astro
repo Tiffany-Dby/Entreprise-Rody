@@ -55,6 +55,20 @@ const kitchens = [
 const headTitle = "Galerie";
 ---
 
+<BaseLayout headTitle={headTitle}>
+  <h1 transition:animate={slide({ duration: "0.7s" })}>{headTitle}</h1>
+
+  <ul>
+    {
+      kitchens.map((kitchen) => (
+        <li>
+          <Image src={kitchen.path} alt={kitchen.alt} />
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
+
 <style lang="scss">
   @use "../styles/mixins" as *;
 
@@ -84,17 +98,3 @@ const headTitle = "Galerie";
     }
   }
 </style>
-
-<BaseLayout headTitle={headTitle}>
-  <h1 transition:animate={slide({ duration: "0.7s" })}>{headTitle}</h1>
-
-  <ul>
-    {
-      kitchens.map((kitchen) => (
-        <li>
-          <Image src={kitchen.path} alt={kitchen.alt} />
-        </li>
-      ))
-    }
-  </ul>
-</BaseLayout>

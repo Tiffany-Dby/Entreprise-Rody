@@ -3,6 +3,14 @@ import { Icon } from "astro-icon/components";
 const { iconName, text, href, linkText } = Astro.props;
 ---
 
+<li class="card__contact--reveal fade--right">
+  <Icon name={iconName} />
+  <p>{text}</p>
+  <div>
+    <a href={href}>{linkText}</a>
+  </div>
+</li>
+
 <style lang="scss">
   @use "../styles/mixins" as *;
 
@@ -52,11 +60,3 @@ const { iconName, text, href, linkText } = Astro.props;
     }
   }
 </style>
-
-<li class="card__contact--reveal fade--right">
-  <Icon name={iconName} />
-  <p>{text}</p>
-  <div>
-    <a href={href}>{linkText}</a>
-  </div>
-</li>

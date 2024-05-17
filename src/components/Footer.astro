@@ -2,6 +2,20 @@
 import Logo from "@components/Logo.astro";
 ---
 
+<footer class="footer">
+  <div class="footer__container">
+    <Logo />
+    <p>
+      &#169; Entreprise Rody de Bâtiment 2024 - made by <a
+        href="https://github.com/Tiffany-Dby"
+      >
+        Tiffany Dbeissy</a
+      >
+      - All rights reserved
+    </p>
+  </div>
+</footer>
+
 <style lang="scss">
   @use "../styles/mixins" as *;
 
@@ -25,17 +39,3 @@ import Logo from "@components/Logo.astro";
     }
   }
 </style>
-
-<footer class="footer">
-  <div class="footer__container">
-    <Logo />
-    <p>
-      &#169; Entreprise Rody de Bâtiment 2024 - made by <a
-        href="https://github.com/Tiffany-Dby"
-      >
-        Tiffany Dbeissy</a
-      >
-      - All rights reserved
-    </p>
-  </div>
-</footer>

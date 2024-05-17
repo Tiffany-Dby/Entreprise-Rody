@@ -3,6 +3,12 @@ import { Image } from "astro:assets";
 import logoERB from "@assets/images/ERB-logo-light.svg";
 ---
 
+<div class="logo">
+  <a href="/" data-astro-reload>
+    <Image src={logoERB} alt="Logo Entreprise Rody de Bâtiment" />
+  </a>
+</div>
+
 <style lang="scss">
   @use "../styles/mixins" as *;
 
@@ -21,9 +27,3 @@ import logoERB from "@assets/images/ERB-logo-light.svg";
     }
   }
 </style>
-
-<div class="logo">
-  <a href="/" data-astro-reload>
-    <Image src={logoERB} alt="Logo Entreprise Rody de Bâtiment" />
-  </a>
-</div>

@@ -4,6 +4,16 @@ import { Image } from "astro:assets";
 const { title, imgPath, imgAlt } = Astro.props;
 ---
 
+<article class="card__key--reveal fade--bottom">
+  <div class="img">
+    <Image src={imgPath} alt={imgAlt} />
+  </div>
+  <h3>{title}</h3>
+  <div>
+    <slot />
+  </div>
+</article>
+
 <style lang="scss">
   @use "../styles/mixins" as *;
 
@@ -32,13 +42,3 @@ const { title, imgPath, imgAlt } = Astro.props;
     }
   }
 </style>
-
-<article class="card__key--reveal fade--bottom">
-  <div class="img">
-    <Image src={imgPath} alt={imgAlt} />
-  </div>
-  <h3>{title}</h3>
-  <div>
-    <slot />
-  </div>
-</article>

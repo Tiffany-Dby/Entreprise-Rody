@@ -43,6 +43,35 @@ const kitchens = [
 ];
 ---
 
+<section class="gallery-overview">
+  <div class="gallery-overview__container">
+    <h2>Une transformation</h2>
+    <p>
+      Plongez dans des exemples de cuisines avant et après mon intervention pour
+      découvrir comment je métamorphose votre espace de vie. Êtes-vous prêt à
+      être inspiré et faire de votre cuisine un sanctuaire de style et de
+      fonctionnalités?
+    </p>
+    <div class="gallery-overview__kitchens">
+      {
+        kitchens.map((kitchen) => (
+          <KitchenOverviewCard
+            imgBeforePath={kitchen.imgBeforePath}
+            imgBeforeAlt={kitchen.imgBeforeAlt}
+            imgAfterPath={kitchen.imgAfterPath}
+            imgAfterAlt={kitchen.imgAfterAlt}
+            kitchenName={kitchen.name}
+            kitchenDescription={kitchen.description}
+          />
+        ))
+      }
+    </div>
+    <div>
+      <a class="btn" href="/gallery/">Je veux voir d'autres cuisines !</a>
+    </div>
+  </div>
+</section>
+
 <style lang="scss">
   @use "../styles/mixins" as *;
 
@@ -73,32 +102,3 @@ const kitchens = [
     }
   }
 </style>
-
-<section class="gallery-overview">
-  <div class="gallery-overview__container">
-    <h2>Une transformation</h2>
-    <p>
-      Plongez dans des exemples de cuisines avant et après mon intervention pour
-      découvrir comment je métamorphose votre espace de vie. Êtes-vous prêt à
-      être inspiré et faire de votre cuisine un sanctuaire de style et de
-      fonctionnalités?
-    </p>
-    <div class="gallery-overview__kitchens">
-      {
-        kitchens.map((kitchen) => (
-          <KitchenOverviewCard
-            imgBeforePath={kitchen.imgBeforePath}
-            imgBeforeAlt={kitchen.imgBeforeAlt}
-            imgAfterPath={kitchen.imgAfterPath}
-            imgAfterAlt={kitchen.imgAfterAlt}
-            kitchenName={kitchen.name}
-            kitchenDescription={kitchen.description}
-          />
-        ))
-      }
-    </div>
-    <div>
-      <a class="btn" href="/gallery/">Je veux voir d'autres cuisines !</a>
-    </div>
-  </div>
-</section>

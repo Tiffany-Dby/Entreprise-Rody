@@ -4,6 +4,20 @@ import { Icon } from "astro-icon/components";
 const { iconName, serviceName, serviceDetails } = Astro.props;
 ---
 
+<li>
+  <details>
+    <summary>
+      <div>
+        <Icon name={iconName} />
+        <strong>{serviceName}</strong>
+      </div>
+    </summary>
+    <div>
+      <p>{serviceDetails}</p>
+    </div>
+  </details>
+</li>
+
 <style lang="scss">
   @use "../styles/mixins" as *;
 
@@ -79,17 +93,3 @@ const { iconName, serviceName, serviceDetails } = Astro.props;
     }
   }
 </style>
-
-<li>
-  <details>
-    <summary>
-      <div>
-        <Icon name={iconName} />
-        <strong>{serviceName}</strong>
-      </div>
-    </summary>
-    <div>
-      <p>{serviceDetails}</p>
-    </div>
-  </details>
-</li>

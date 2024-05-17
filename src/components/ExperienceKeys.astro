@@ -9,30 +9,6 @@ import communicationImg from "@assets/images/Communication.svg";
 const getYearsSpent = (startingYear) => new Date().getFullYear() - startingYear;
 ---
 
-<style lang="scss">
-  @use "../styles/mixins" as *;
-
-  section {
-    @include container(
-      $padding: var(--padding-m) var(--padding-s) var(--padding-xl)
-    );
-    @include flex("column", "nowrap");
-    gap: 3rem;
-
-    div {
-      @include flex;
-      justify-content: center;
-      gap: 2rem;
-      margin: 0 auto;
-      max-width: 900px;
-
-      @media screen and (min-width: 1230px) {
-        max-width: none;
-      }
-    }
-  }
-</style>
-
 <section>
   <h2>Mon entreprise c'est ...</h2>
 
@@ -69,3 +45,27 @@ const getYearsSpent = (startingYear) => new Date().getFullYear() - startingYear;
     </KeyCard>
   </div>
 </section>
+
+<style lang="scss">
+  @use "../styles/mixins" as *;
+
+  section {
+    @include container(
+      $padding: var(--padding-m) var(--padding-s) var(--padding-xl)
+    );
+    @include flex("column", "nowrap");
+    gap: 3rem;
+
+    div {
+      @include flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 0 auto;
+      max-width: 900px;
+
+      @media screen and (min-width: 1230px) {
+        max-width: none;
+      }
+    }
+  }
+</style>

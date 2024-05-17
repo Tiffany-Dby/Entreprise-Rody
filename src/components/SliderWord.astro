@@ -2,6 +2,18 @@
 const { words } = Astro.props;
 ---
 
+<div>
+  <ul>
+    {
+      words.map((word) => (
+        <li>
+          <p>{word}</p>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
 <style lang="scss">
   @use "../styles/mixins" as *;
 
@@ -61,15 +73,3 @@ const { words } = Astro.props;
     }
   }
 </style>
-
-<div>
-  <ul>
-    {
-      words.map((word) => (
-        <li>
-          <p>{word}</p>
-        </li>
-      ))
-    }
-  </ul>
-</div>

@@ -12,6 +12,40 @@ const {
 } = Astro.props;
 ---
 
+<article class="img__kitchen-before-after">
+  <div class="img__container">
+    <Image class="img--before" src={imgBeforePath} alt={imgBeforeAlt} />
+    <Image class="img--after" src={imgAfterPath} alt={imgAfterAlt} />
+    <input
+      type="range"
+      name=""
+      id=""
+      min="0"
+      max="100"
+      value="50"
+      class="img__slider"
+      aria-label="Pourcentage de l'image 'avant' montrée"
+    />
+    <div class="img__line"></div>
+    <div class="img__slider-btn" aria-hidden="true">
+      <Icon name="ep--arrow-left-bold" />
+      <Icon name="ep--arrow-right-bold" />
+    </div>
+  </div>
+  <h3>{kitchenName}</h3>
+  <p>{kitchenDescription}</p>
+</article>
+
+<script>
+  const containerElts = document.querySelectorAll(".img__container");
+
+  containerElts.forEach((container) => {
+    container.querySelector(".img__slider").addEventListener("input", (e) => {
+      container.style.setProperty("--slider-position", `${e.target.value}%`);
+    });
+  });
+</script>
+
 <style lang="scss">
   @use "../styles/mixins" as *;
 
@@ -106,37 +140,3 @@ const {
     }
   }
 </style>
-
-<article class="img__kitchen-before-after">
-  <div class="img__container">
-    <Image class="img--before" src={imgBeforePath} alt={imgBeforeAlt} />
-    <Image class="img--after" src={imgAfterPath} alt={imgAfterAlt} />
-    <input
-      type="range"
-      name=""
-      id=""
-      min="0"
-      max="100"
-      value="50"
-      class="img__slider"
-      aria-label="Pourcentage de l'image 'avant' montrée"
-    />
-    <div class="img__line"></div>
-    <div class="img__slider-btn" aria-hidden="true">
-      <Icon name="ep--arrow-left-bold" />
-      <Icon name="ep--arrow-right-bold" />
-    </div>
-  </div>
-  <h3>{kitchenName}</h3>
-  <p>{kitchenDescription}</p>
-</article>
-
-<script>
-  const containerElts = document.querySelectorAll(".img__container");
-
-  containerElts.forEach((container) => {
-    container.querySelector(".img__slider").addEventListener("input", (e) => {
-      container.style.setProperty("--slider-position", `${e.target.value}%`);
-    });
-  });
-</script>

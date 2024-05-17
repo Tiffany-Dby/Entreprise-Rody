@@ -30,6 +30,44 @@ const servicesData = [
 ];
 ---
 
+<section class="services-overview" id="services">
+  <div class="services-overview__title">
+    <h2>Mes services</h2>
+  </div>
+  <div class="services-overview__container">
+    <div class="services-overview--left">
+      <p>
+        Découvrez un aperçu de mes <strong>compétences</strong> et <strong
+          >prestations</strong
+        > en tant que <strong>spécialiste dans la pose de cuisines</strong>.
+      </p>
+      <p>
+        Tous mes services sont couverts par une <strong
+          >garantie décennale</strong
+        >, <strong>biennale</strong>, et une <strong
+          >assurance responsabilité civile professionnelle (RC Pro)</strong
+        >, dont l'attestation vous sera délivrée.
+      </p>
+      <div>
+        <a href="#contact">Me contacter</a>
+      </div>
+    </div>
+    <div class="services-overview--right">
+      <ul>
+        {
+          servicesData.map((service) => (
+            <ServiceOverviewCard
+              iconName={service.iconName}
+              serviceName={service.serviceName}
+              serviceDetails={service.serviceDetails}
+            />
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
+
 <style lang="scss">
   @use "../styles/mixins" as *;
 
@@ -92,41 +130,3 @@ const servicesData = [
     }
   }
 </style>
-
-<section class="services-overview" id="services">
-  <div class="services-overview__title">
-    <h2>Mes services</h2>
-  </div>
-  <div class="services-overview__container">
-    <div class="services-overview--left">
-      <p>
-        Découvrez un aperçu de mes <strong>compétences</strong> et <strong
-          >prestations</strong
-        > en tant que <strong>spécialiste dans la pose de cuisines</strong>.
-      </p>
-      <p>
-        Tous mes services sont couverts par une <strong
-          >garantie décennale</strong
-        >, <strong>biennale</strong>, et une <strong
-          >assurance responsabilité civile professionnelle (RC Pro)</strong
-        >, dont l'attestation vous sera délivrée.
-      </p>
-      <div>
-        <a href="#contact">Me contacter</a>
-      </div>
-    </div>
-    <div class="services-overview--right">
-      <ul>
-        {
-          servicesData.map((service) => (
-            <ServiceOverviewCard
-              iconName={service.iconName}
-              serviceName={service.serviceName}
-              serviceDetails={service.serviceDetails}
-            />
-          ))
-        }
-      </ul>
-    </div>
-  </div>
-</section>

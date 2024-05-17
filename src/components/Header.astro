@@ -4,6 +4,14 @@ import HeaderNavigation from "@components/HeaderNavigation.astro";
 import Burger from "@components/Burger.astro";
 ---
 
+<header id="header" class="header">
+  <div class="header__container">
+    <Logo />
+    <Burger />
+    <HeaderNavigation />
+  </div>
+</header>
+
 <style lang="scss">
   @use "../styles/mixins" as *;
 
@@ -40,11 +48,3 @@ import Burger from "@components/Burger.astro";
     }
   }
 </style>
-
-<header id="header" class="header">
-  <div class="header__container">
-    <Logo />
-    <Burger />
-    <HeaderNavigation />
-  </div>
-</header>
