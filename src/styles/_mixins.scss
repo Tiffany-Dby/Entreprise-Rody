@@ -27,12 +27,12 @@
   font-weight: var(--fw-semi-bold);
   padding: var(--padding-xs) var(--padding-s);
   border-radius: var(--radius-l);
-  color: var(--primary);
-  border: 3px solid var(--primary);
+  color: var(--primary-125);
+  border: 3px solid var(--primary-125);
   transition: all 0.5s ease;
 
   &:hover {
-    background-color: var(--primary);
+    background-color: var(--primary-125);
     color: var(--white);
   }
 }
