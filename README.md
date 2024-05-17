@@ -6,7 +6,7 @@ Currently containing placeholder images, awaiting on the client.
 
 > 🧑‍🚀 Made with Astro
 
-https://tiffany-dby.github.io/Entreprise-Rody/
+https://tiffany-dby.github.io/entreprise-rody/
 
 
 ## Work in Progress
