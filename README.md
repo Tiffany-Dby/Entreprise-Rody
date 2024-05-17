@@ -11,4 +11,4 @@ https://tiffany-dby.github.io/entreprise-rody
 
 ## Work in Progress
 
-Stay tuned for more updates and information coming soon!
+Stay tuned for more updates and informations coming soon !
