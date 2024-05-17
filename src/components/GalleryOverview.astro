@@ -2,6 +2,45 @@
 import kitchenOneBefore from "@assets/images/kitchen1-before.jpg";
 import kitchenOneAfter from "@assets/images/kitchen1-after.jpg";
 import KitchenOverviewCard from "./KitchenOverviewCard.astro";
+
+const kitchens = [
+  {
+    imgBeforePath: kitchenOneBefore,
+    imgBeforeAlt: "",
+    imgAfterPath: kitchenOneAfter,
+    imgAfterAlt: "",
+    name: "La cuisine Lotus",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?",
+  },
+  {
+    imgBeforePath: kitchenOneBefore,
+    imgBeforeAlt: "",
+    imgAfterPath: kitchenOneAfter,
+    imgAfterAlt: "",
+    name: "La cuisine Lotus",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?",
+  },
+  {
+    imgBeforePath: kitchenOneBefore,
+    imgBeforeAlt: "",
+    imgAfterPath: kitchenOneAfter,
+    imgAfterAlt: "",
+    name: "La cuisine Lotus",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?",
+  },
+  {
+    imgBeforePath: kitchenOneBefore,
+    imgBeforeAlt: "",
+    imgAfterPath: kitchenOneAfter,
+    imgAfterAlt: "",
+    name: "La cuisine Lotus",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?",
+  },
+];
 ---
 
 <style lang="scss">
@@ -45,57 +84,21 @@ import KitchenOverviewCard from "./KitchenOverviewCard.astro";
       fonctionnalités?
     </p>
     <div class="gallery-overview__kitchens">
-      <KitchenOverviewCard
-        imgBeforePath={kitchenOneBefore}
-        imgBeforeAlt=""
-        imgAfterPath={kitchenOneAfter}
-        imgAfterAlt=""
-        kitchenName="La cuisine Lotus"
-        kitchenDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?"
-      />
-      <KitchenOverviewCard
-        imgBeforePath={kitchenOneBefore}
-        imgBeforeAlt=""
-        imgAfterPath={kitchenOneAfter}
-        imgAfterAlt=""
-        kitchenName="La cuisine Lotus"
-        kitchenDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?"
-      />
-      <KitchenOverviewCard
-        imgBeforePath={kitchenOneBefore}
-        imgBeforeAlt=""
-        imgAfterPath={kitchenOneAfter}
-        imgAfterAlt=""
-        kitchenName="La cuisine Lotus"
-        kitchenDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?"
-      />
-      <KitchenOverviewCard
-        imgBeforePath={kitchenOneBefore}
-        imgBeforeAlt=""
-        imgAfterPath={kitchenOneAfter}
-        imgAfterAlt=""
-        kitchenName="La cuisine Lotus"
-        kitchenDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?"
-      />
-      <!-- <KitchenOverviewCard
-        imgBeforePath={kitchenOneBefore}
-        imgBeforeAlt=""
-        imgAfterPath={kitchenOneAfter}
-        imgAfterAlt=""
-        kitchenName="La cuisine Lotus"
-        kitchenDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?"
-      />
-      <KitchenOverviewCard
-        imgBeforePath={kitchenOneBefore}
-        imgBeforeAlt=""
-        imgAfterPath={kitchenOneAfter}
-        imgAfterAlt=""
-        kitchenName="La cuisine Lotus"
-        kitchenDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?"
-      /> -->
+      {
+        kitchens.map((kitchen) => (
+          <KitchenOverviewCard
+            imgBeforePath={kitchen.imgBeforePath}
+            imgBeforeAlt={kitchen.imgBeforeAlt}
+            imgAfterPath={kitchen.imgAfterPath}
+            imgAfterAlt={kitchen.imgAfterAlt}
+            kitchenName={kitchen.name}
+            kitchenDescription={kitchen.description}
+          />
+        ))
+      }
     </div>
     <div>
-      <a class="btn" href="/">Je veux voir d'autres cuisines !</a>
+      <a class="btn" href="/gallery/">Je veux voir d'autres cuisines !</a>
     </div>
   </div>
 </section>

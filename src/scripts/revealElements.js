@@ -3,10 +3,10 @@ document.addEventListener('astro:page-load', () => {
   const keyElts = document.querySelectorAll(".card__key--reveal");
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((element, i) => {
-      if (element.isIntersecting) {
-        element.target.classList.add("card--active");
-        element.target.style.animationDuration = `${1 + i * 0.25}s`;
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("card--active");
+        entry.target.style.animationDuration = `${1 + i * 0.5}s`;
       }
     });
   });

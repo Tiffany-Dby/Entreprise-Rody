@@ -1,0 +1,100 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { slide } from "astro:transitions";
+import { Image } from "astro:assets";
+
+import kitchenOnePath from "@assets/images/gallery/kitchen1.webp";
+import kitchenTwoPath from "@assets/images/gallery/kitchen2.webp";
+import kitchenThreePath from "@assets/images/gallery/kitchen3.webp";
+import kitchenFourPath from "@assets/images/gallery/kitchen4.webp";
+import kitchenFivePath from "@assets/images/gallery/kitchen5.webp";
+import kitchenSixPath from "@assets/images/gallery/kitchen6.webp";
+import kitchenSevenPath from "@assets/images/gallery/kitchen7.webp";
+import kitchenEightPath from "@assets/images/gallery/kitchen8.webp";
+import kitchenNinePath from "@assets/images/gallery/kitchen9.webp";
+
+const kitchens = [
+  {
+    path: kitchenOnePath,
+    alt: "",
+  },
+  {
+    path: kitchenTwoPath,
+    alt: "",
+  },
+  {
+    path: kitchenThreePath,
+    alt: "",
+  },
+  {
+    path: kitchenFourPath,
+    alt: "",
+  },
+  {
+    path: kitchenFivePath,
+    alt: "",
+  },
+  {
+    path: kitchenSixPath,
+    alt: "",
+  },
+  {
+    path: kitchenSevenPath,
+    alt: "",
+  },
+  {
+    path: kitchenEightPath,
+    alt: "",
+  },
+  {
+    path: kitchenNinePath,
+    alt: "",
+  },
+];
+
+const headTitle = "Galerie";
+---
+
+<style lang="scss">
+  @use "../styles/mixins" as *;
+
+  ul {
+    @include container;
+    display: grid;
+    gap: var(--padding-s);
+
+    @media screen and (min-width: 650px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width: 1024px) {
+      gap: var(--padding-m);
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, calc(400px - var(--padding-m) / 2));
+    }
+
+    li {
+      box-shadow: var(--shadow-border-s) var(--primary-125);
+
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(7) {
+        grid-row: span 2;
+      }
+    }
+  }
+</style>
+
+<BaseLayout headTitle={headTitle}>
+  <h1 transition:animate={slide({ duration: "0.7s" })}>{headTitle}</h1>
+
+  <ul>
+    {
+      kitchens.map((kitchen) => (
+        <li>
+          <Image src={kitchen.path} alt={kitchen.alt} />
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

@@ -1,7 +1,5 @@
 ---
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1);
-const isActive = (path) => (currentPath === path ? "active" : "");
+
 ---
 
 <style lang="scss">
@@ -87,18 +85,22 @@ const isActive = (path) => (currentPath === path ? "active" : "");
   }
 </style>
 
-<nav>
+<nav transition:persist="nav">
   <ul>
-    <li><a class={isActive("")} href="/" data-astro-reload>Accueil</a></li>
     <li>
-      <a class={isActive("about")} href="/about/">À propos</a>
+      <a href="/" data-astro-reload>Accueil</a>
     </li>
     <li>
       <a href="/#services">Services</a>
     </li>
     <li>
-      <a class={isActive("gallery")} href="/">Galerie</a>
+      <a href="/about/">À propos</a>
     </li>
-    <li><a href="#contact">Contact</a></li>
+    <li>
+      <a href="/gallery/">Galerie</a>
+    </li>
+    <li>
+      <a href="#contact">Contact</a>
+    </li>
   </ul>
 </nav>

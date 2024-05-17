@@ -1,5 +1,33 @@
 ---
 import ServiceOverviewCard from "./ServiceOverviewCard.astro";
+
+const servicesData = [
+  {
+    iconName: "mdi--kitchen-counter",
+    serviceName: "Cuisine & annexe",
+    serviceDetails: `Installation complète de cuisine et d'annexes : réalisation de coffrage, de calfeutrement, aménagement d'une arrière-cuisine, une buanderie, un dressing, une bibliothèque, des placards, etc.`,
+  },
+  {
+    iconName: "fa6-solid--faucet-drip",
+    serviceName: "Plomberie",
+    serviceDetails: `Installation, modification et distribution depuis le compteur d'eau et évacuation selon le plan.`,
+  },
+  {
+    iconName: "healthicons--electricity",
+    serviceName: "Électricité : habilitation BR",
+    serviceDetails: `Installation, modification et déplacement des points électriques selon le plan : prises dédiées, alimentations, éclairages.`,
+  },
+  {
+    iconName: "material-symbols-light--oven",
+    serviceName: "Électroménager",
+    serviceDetails: `Installation de tout type d'appareillage électroménager, qu'il soit intégrable ou posable : hotte, plaques de cuisson, réfrigérateurs, lave-linge, lave-vaisselle, gazinière, fours (traditionnels, à vapeur, micro-ondes, combinés), etc.`,
+  },
+  {
+    iconName: "mdi--bricks",
+    serviceName: "Revêtement sol & mur",
+    serviceDetails: `Pose de différents types de revêtements pour les sols et les murs : plan de travail (découpe pour éviers et plaques), carrelage, parquet, miroirs, crédences, etc.`,
+  },
+];
 ---
 
 <style lang="scss">
@@ -89,40 +117,15 @@ import ServiceOverviewCard from "./ServiceOverviewCard.astro";
     </div>
     <div class="services-overview--right">
       <ul>
-        <ServiceOverviewCard
-          iconName="mdi--kitchen-counter"
-          serviceName="Cuisine & annexe"
-          serviceDetails=`Installation complète de cuisine et d'annexes : réalisation de
-          coffrage, de calfeutrement, aménagement d'une arrière-cuisine, une
-          buanderie, un dressing, une bibliothèque, des placards, etc.`
-        />
-        <ServiceOverviewCard
-          iconName="fa6-solid--faucet-drip"
-          serviceName="Plomberie"
-          serviceDetails=`Installation, modification et distribution depuis le compteur d'eau
-          et évacuation selon le plan.`
-        />
-        <ServiceOverviewCard
-          iconName="healthicons--electricity"
-          serviceName="Électricité : habilitation BR"
-          serviceDetails=`Installation, modification et déplacement des points électriques
-          selon le plan : prises dédiées, alimentations, éclairages.`
-        />
-        <ServiceOverviewCard
-          iconName="material-symbols-light--oven"
-          serviceName="Électroménager"
-          serviceDetails=`Installation de tout type d'appareillage électroménager, qu'il soit
-          intégrable ou posable : hotte, plaques de cuisson, réfrigérateurs,
-          lave-linge, lave-vaisselle, gazinière, fours (traditionnels, à
-          vapeur, micro-ondes, combinés), etc.`
-        />
-        <ServiceOverviewCard
-          iconName="mdi--bricks"
-          serviceName="Revêtement sol & mur"
-          serviceDetails=`Pose de différents types de revêtements pour les sols et les murs :
-          plan de travail (découpe pour éviers et plaques), carrelage,
-          parquet, miroirs, crédences, etc.`
-        />
+        {
+          servicesData.map((service) => (
+            <ServiceOverviewCard
+              iconName={service.iconName}
+              serviceName={service.serviceName}
+              serviceDetails={service.serviceDetails}
+            />
+          ))
+        }
       </ul>
     </div>
   </div>

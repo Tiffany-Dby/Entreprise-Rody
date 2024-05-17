@@ -1,0 +1,75 @@
+---
+const { words } = Astro.props;
+---
+
+<style lang="scss">
+  @use "../styles/mixins" as *;
+
+  div {
+    height: 50px;
+    max-width: fit-content;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 2px white;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    ul {
+      @include flex("column-reverse", "nowrap");
+      height: 100%;
+      padding: 0 var(--padding-s);
+      animation: wordSwap 12s infinite ease-in-out;
+    }
+
+    li {
+      display: grid;
+      flex-shrink: 0;
+      height: 100%;
+      width: 100%;
+      font-size: var(--font-size-l);
+
+      p {
+        align-self: center;
+        text-transform: uppercase;
+        font-weight: var(--fw-bold);
+      }
+    }
+  }
+
+  @keyframes wordSwap {
+    0%,
+    15% {
+      transform: translateY(0);
+    }
+    20%,
+    35% {
+      transform: translateY(100%);
+    }
+    40%,
+    55% {
+      transform: translateY(200%);
+    }
+    60%,
+    75% {
+      transform: translateY(300%);
+    }
+    80%,
+    95% {
+      transform: translateY(400%);
+    }
+    100% {
+      transform: translateY(500%);
+    }
+  }
+</style>
+
+<div>
+  <ul>
+    {
+      words.map((word) => (
+        <li>
+          <p>{word}</p>
+        </li>
+      ))
+    }
+  </ul>
+</div>

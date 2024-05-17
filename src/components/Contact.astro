@@ -2,6 +2,21 @@
 import ContactCard from "./ContactCard.astro";
 import workerImg from "@assets/images/worker.jpg";
 import { Image } from "astro:assets";
+
+const contactData = [
+  {
+    iconName: "line-md--email",
+    text: "Email",
+    href: "mailto:entreprise_rody@hotmail.com",
+    linkText: "entreprise_rody@hotmail.com",
+  },
+  {
+    iconName: "line-md--phone-call-loop",
+    text: "Téléphone",
+    href: "tel:+33607407407",
+    linkText: "06.07.40.74.07",
+  },
+];
 ---
 
 <style lang="scss">
@@ -111,18 +126,16 @@ import { Image } from "astro:assets";
         besoins et projets.
       </p>
       <ul>
-        <ContactCard
-          iconName="line-md--email"
-          text="Email"
-          href="mailto:entreprise_rody@hotmail.com"
-          linkText="entreprise_rody@hotmail.com"
-        />
-        <ContactCard
-          iconName="line-md--phone-call-loop"
-          text="Téléphone"
-          href="tel:+33607407407"
-          linkText="06.07.40.74.07"
-        />
+        {
+          contactData.map((data) => (
+            <ContactCard
+              iconName={data.iconName}
+              text={data.text}
+              href={data.href}
+              linkText={data.linkText}
+            />
+          ))
+        }
       </ul>
     </div>
     <div class="contact--img">
