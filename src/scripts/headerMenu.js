@@ -21,7 +21,18 @@ const toggleNav = () => {
   });
 }
 
+const closeNavOnClick = () => {
+  linksElts.forEach((link) => {
+    link.addEventListener('click', () => {
+      burgerElt.classList.toggle("burger--open");
+      navElt.classList.toggle("nav--open");
+    })
+  });
+}
+
 document.addEventListener("astro:page-load", () => {
-  toggleNav();
   checkActive();
 });
+
+toggleNav();
+closeNavOnClick();

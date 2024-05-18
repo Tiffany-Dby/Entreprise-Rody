@@ -2,14 +2,8 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
-const {
-  kitchenName,
-  kitchenDescription,
-  imgBeforePath,
-  imgBeforeAlt,
-  imgAfterPath,
-  imgAfterAlt,
-} = Astro.props;
+const { kitchenName, imgBeforePath, imgBeforeAlt, imgAfterPath, imgAfterAlt } =
+  Astro.props;
 ---
 
 <article class="img__kitchen-before-after">
@@ -33,7 +27,6 @@ const {
     </div>
   </div>
   <h3>{kitchenName}</h3>
-  <p>{kitchenDescription}</p>
 </article>
 
 <script>
@@ -62,22 +55,16 @@ const {
         max-width: calc(100% / 2 - var(--padding-s));
       }
 
-      &:hover {
-        background-color: var(--dark-grey);
-      }
-
       h3 {
         text-align: center;
-      }
-
-      p {
-        padding: 0 var(--padding-s) var(--padding-s);
+        padding: var(--padding-xs);
       }
     }
 
     &__container {
       position: relative;
       display: grid;
+      max-height: 412px;
       overflow: hidden;
       border-radius: var(--radius-s) var(--radius-s) 0 0;
 
@@ -123,7 +110,8 @@ const {
       position: absolute;
       left: var(--slider-position);
       transform: translateX(-50%);
-      background-color: var(--primary-125);
+      background-image: var(--linear-gradient-transparent-primary-15deg);
+      background-color: var(--black);
       pointer-events: none;
       transition: background-color 0.5s ease;
     }

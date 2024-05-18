@@ -1,44 +1,39 @@
 ---
 import kitchenOneBefore from "@assets/images/overview/kitchen1-before.webp";
 import kitchenOneAfter from "@assets/images/overview/kitchen1-after.webp";
+import showroomBefore from "@assets/images/overview/showroom-before.webp";
+import showroomAfter from "@assets/images/overview/showroom-after.webp";
+import nonameBefore from "@assets/images/overview/noname-before.webp";
 import KitchenOverviewCard from "./KitchenOverviewCard.astro";
 
 const kitchens = [
   {
-    imgBeforePath: kitchenOneBefore,
-    imgBeforeAlt: "",
-    imgAfterPath: kitchenOneAfter,
-    imgAfterAlt: "",
+    imgBeforePath: showroomBefore,
+    imgBeforeAlt: "La cuisine showroom avant intallation",
+    imgAfterPath: showroomAfter,
+    imgAfterAlt: "La cuisine showroom après intallation",
+    name: "La cuisine Showroom",
+  },
+  {
+    imgBeforePath: nonameBefore,
+    imgBeforeAlt: "La cuisine Lotus avant intallation",
+    imgAfterPath: showroomAfter,
+    imgAfterAlt: "La cuisine Lotus après intallation",
     name: "La cuisine Lotus",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?",
   },
   {
     imgBeforePath: kitchenOneBefore,
-    imgBeforeAlt: "",
+    imgBeforeAlt: "La cuisine Lotus avant intallation",
     imgAfterPath: kitchenOneAfter,
-    imgAfterAlt: "",
+    imgAfterAlt: "La cuisine Lotus après intallation",
     name: "La cuisine Lotus",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?",
   },
   {
     imgBeforePath: kitchenOneBefore,
-    imgBeforeAlt: "",
+    imgBeforeAlt: "La cuisine Lotus avant intallation",
     imgAfterPath: kitchenOneAfter,
-    imgAfterAlt: "",
+    imgAfterAlt: "La cuisine Lotus après intallation",
     name: "La cuisine Lotus",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?",
-  },
-  {
-    imgBeforePath: kitchenOneBefore,
-    imgBeforeAlt: "",
-    imgAfterPath: kitchenOneAfter,
-    imgAfterAlt: "",
-    name: "La cuisine Lotus",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit itaque facere commodi delectus? Soluta deleniti deserunt labore sapiente modi tenetur?",
   },
 ];
 ---
@@ -61,7 +56,6 @@ const kitchens = [
             imgAfterPath={kitchen.imgAfterPath}
             imgAfterAlt={kitchen.imgAfterAlt}
             kitchenName={kitchen.name}
-            kitchenDescription={kitchen.description}
           />
         ))
       }
