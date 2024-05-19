@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { slide } from "astro:transitions";
 
 const headTitle = "À propos";
 ---
@@ -68,11 +67,11 @@ const headTitle = "À propos";
     &::before,
     &::after {
       content: "";
+      display: block;
       position: absolute;
       left: 50%;
       bottom: 0;
       background-color: var(--primary);
-      display: block;
     }
 
     &::after {

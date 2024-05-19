@@ -22,14 +22,14 @@ const { iconName, text, href, linkText } = Astro.props;
     padding: var(--padding-s);
     background-color: var(--white);
     box-shadow:
-      inset 0px 0px 0px 1px rgba(173, 173, 173, 0.301),
-      2px 0px 5px 0px rgba(57, 65, 75, 0.25);
+      inset var(--shadow-border-xs) rgba(173, 173, 173, 0.301),
+      var(--shadow-2-0-5-0) rgba(57, 65, 75, 0.25);
     transition: all 0.3s ease;
 
     &:hover {
       box-shadow:
-        inset 0px 0px 0px 1px var(--secondary-125),
-        2px 0px 5px 0px rgba(120, 160, 209, 0.473);
+        inset var(--shadow-border-xs) var(--secondary-125),
+        var(--shadow-2-0-5-0) rgba(120, 160, 209, 0.473);
 
       [data-icon] {
         color: var(--secondary-125);

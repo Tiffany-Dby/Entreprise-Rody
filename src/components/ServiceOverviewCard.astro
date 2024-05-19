@@ -25,10 +25,9 @@ const { iconName, serviceName, serviceDetails } = Astro.props;
     details {
       padding: 0 var(--padding-xs);
       background-color: var(--primary-125);
-      box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
+      box-shadow: var(--shadow-0-1-5-0) rgba(0, 0, 0, 0.3);
       background-image: var(--linear-gradient-transparent-primary-15deg);
       border-radius: var(--radius-l);
-
       color: var(--white);
       transition: all 0.5s ease;
 
@@ -45,9 +44,9 @@ const { iconName, serviceName, serviceDetails } = Astro.props;
       }
 
       summary {
+        justify-content: space-between;
         padding: var(--padding-xs);
         cursor: pointer;
-        justify-content: space-between;
 
         &,
         div {
@@ -64,17 +63,16 @@ const { iconName, serviceName, serviceDetails } = Astro.props;
           height: 22px;
           width: 22px;
           display: flex;
-          justify-content: center;
-          align-items: center;
-          font-size: 3rem;
-          font-weight: bold;
+          @include center;
+          font-size: var(--font-size-xl);
+          font-weight: var(--fw-bold);
           transform: rotate(90deg);
           transition: all 0.3s ease;
         }
       }
 
       & > div {
-        box-shadow: inset 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
+        box-shadow: inset var(--shadow-0-1-5-0) rgba(0, 0, 0, 0.3);
         padding: var(--padding-xs);
         border-radius: var(--radius-l);
         background-color: var(--primary-50);
@@ -88,7 +86,7 @@ const { iconName, serviceName, serviceDetails } = Astro.props;
 
     [data-icon] {
       @include flex;
-      font-size: 2.5rem;
+      font-size: var(--font-size-xl);
       color: var(--white);
     }
   }

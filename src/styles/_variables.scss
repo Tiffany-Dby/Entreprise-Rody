@@ -42,10 +42,6 @@
   --secondary-125: #67cffc;
   --secondary-50: #ccf0ff;
   --secondary-25: #f2fbff;
-  --tertiary: #6F899E;
-  --tertiary-125: #455461;
-  --tertiary-50: #a9b8c5;
-  --tertiary-25: #f7faff;
   --white: #fefefe;
   --black: #111111;
   --dark-grey: #313131;
@@ -78,7 +74,10 @@
   --radius-l: .7rem;
 
   // SHADOW
+  --shadow-border-xs: 0px 0px 0px 1px;
   --shadow-border-s: 0px 0px 0px 2px;
+  --shadow-2-0-5-0: 2px 0px 5px 0px;
+  --shadow-0-1-5-0: 0px 1px 5px 0px;
 
   // SLIDER
   --slider-position: 50%;

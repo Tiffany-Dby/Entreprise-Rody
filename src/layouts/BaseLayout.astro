@@ -1,9 +1,6 @@
 ---
 import "../styles/index.scss";
 
-import { ViewTransitions } from "astro:transitions";
-import { slide } from "astro:transitions";
-
 import Header from "@components/Header.astro";
 import Contact from "@components/Contact.astro";
 import Footer from "@components/Footer.astro";
@@ -29,16 +26,12 @@ const { headTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/entreprise-rody/favicon.svg" />
 
     <title>{headTitle}</title>
-    <ViewTransitions />
   </head>
 
   <body>
     <Header />
 
-    <main
-      transition:animate={slide({ duration: "0.7s" })}
-      transition:name="main"
-    >
+    <main>
       <slot />
       <Contact />
     </main>

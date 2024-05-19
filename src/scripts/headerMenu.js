@@ -30,9 +30,6 @@ const closeNavOnClick = () => {
   });
 }
 
-document.addEventListener("astro:page-load", () => {
-  checkActive();
-});
-
+checkActive();
 toggleNav();
 closeNavOnClick();

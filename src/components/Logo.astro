@@ -4,7 +4,7 @@ import logoERB from "@assets/images/ERB-logo-light.svg";
 ---
 
 <div class="logo">
-  <a href="/entreprise-rody/" data-astro-reload>
+  <a href="/entreprise-rody/">
     <Image src={logoERB} alt="Logo Entreprise Rody de Bâtiment" />
   </a>
 </div>
@@ -13,10 +13,10 @@ import logoERB from "@assets/images/ERB-logo-light.svg";
   @use "../styles/mixins" as *;
 
   .logo {
-    max-width: 70px;
-    width: 100%;
     display: flex;
     align-items: center;
+    max-width: 70px;
+    width: 100%;
 
     a {
       display: flex;

@@ -22,13 +22,13 @@ const { title, imgPath, imgAlt } = Astro.props;
     padding: var(--padding-s);
     border-radius: var(--radius-m);
     text-align: center;
-    box-shadow: inset 0px 0px 0px 1px rgba(173, 173, 173, 0.301);
+    box-shadow: inset var(--shadow-border-xs) rgba(173, 173, 173, 0.301);
 
     @media screen and (min-width: 550px) {
-      max-width: calc(100% / 2 - var(--padding-s));
+      max-width: calc(100% / 2 - 2rem / 2);
     }
     @media screen and (min-width: 1230px) {
-      max-width: calc(100% / 4 - var(--padding-s));
+      max-width: calc(100% / 4 - 1.5rem);
     }
 
     .img {
